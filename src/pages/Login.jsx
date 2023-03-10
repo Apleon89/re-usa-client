@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { loginService } from "../services/auth.services";
+import { useContext } from "react";
+import { authContext } from "../context/auth.context";
 
 function Login() {
   const navigate = useNavigate();
+
+  const { validateToken } = useContext(authContext);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -18,7 +22,8 @@ function Login() {
     try {
       const response = await loginService(user);
       localStorage.setItem("authToken", response.data.authToken);
-      
+      validateToken();
+      navigate("/anuncios");
     } catch (error) {
       navigate("/error");
     }

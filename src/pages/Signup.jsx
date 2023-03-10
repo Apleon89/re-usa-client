@@ -32,7 +32,7 @@ function Signup() {
   };
   return (
     <>
-        <h2>Regístrate</h2>
+      <h2>Regístrate</h2>
       <form>
         <div>
           <label htmlFor="username">Nombre de Usuario:</label>
@@ -78,7 +78,9 @@ function Signup() {
         <button onClick={handleSubmit}>Registrarse</button>
       </form>
       <p>¿Registrado?</p>
-      <Link to='/acceso'><button>Accede</button></Link>
+      <Link to="/acceso">
+        <button>Accede</button>
+      </Link>
     </>
   );
 }
