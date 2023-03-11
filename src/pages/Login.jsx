@@ -6,11 +6,12 @@ import { authContext } from "../context/auth.context";
 
 function Login() {
   const navigate = useNavigate();
-
+  
   const { validateToken } = useContext(authContext);
-
+  
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [errorMessage, setErrorMessage] = useState("");
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -25,7 +26,12 @@ function Login() {
       validateToken();
       navigate("/anuncios");
     } catch (error) {
-      navigate("/error");
+      if (error.response.status === 400) {
+        setErrorMessage(error.response.data.errorMessage);
+      } else {
+        navigate("/error");
+        console.log(error);
+      }
     }
   };
   return (
@@ -52,11 +58,15 @@ function Login() {
             onChange={(e) => setPassword(e.target.value)}
           />
         </div>
+        <div>{errorMessage !== "" && <h2>{errorMessage}</h2>}</div>
         <button onClick={handleLogin}>Entrar</button>
       </form>
       <p>¿No tienes cuenta? Regístrate</p>
       <Link to="/registro">
         <button>Regístrase</button>
+      </Link>
+      <Link to="/anuncios">
+        <button>Ver anuncios</button>
       </Link>
     </>
   );

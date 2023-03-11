@@ -81,6 +81,9 @@ function Signup() {
       <Link to="/acceso">
         <button>Accede</button>
       </Link>
+      <Link to="/anuncios">
+        <button>Ver anuncios</button>
+      </Link>
     </>
   );
 }

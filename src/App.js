@@ -4,6 +4,7 @@ import PrivatePage from "./components/PrivatePage";
 import AdDetails from "./pages/AdDetails";
 import AllAds from "./pages/AllAds";
 import EditAd from "./pages/EditAd";
+import EditUserProfile from "./pages/EditUserProfile";
 import Error from "./pages/Error";
 import FavouritesUserAds from "./pages/FavouritesUserAds";
 import Home from "./pages/Home";
@@ -11,6 +12,8 @@ import Login from "./pages/Login";
 import NewAd from "./pages/NewAd";
 import NotFound from "./pages/NotFound";
 import Signup from "./pages/Signup";
+import UserAds from "./pages/UserAds";
+import UserProfile from "./pages/UserProfile";
 
 function App() {
   return (
@@ -19,14 +22,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/registro" element={<Signup />} />
         <Route path="/acceso" element={<Login />} />
-        <Route
-          path="/anuncios"
-          element={
-            <PrivatePage>
-              <AllAds />
-            </PrivatePage>
-          }
-        />
+        <Route path="/anuncios" element={<AllAds />} />
         <Route
           path="/anuncios/:idProducto"
           element={
@@ -56,6 +52,30 @@ function App() {
           element={
             <PrivatePage>
               <FavouritesUserAds />
+            </PrivatePage>
+          }
+        />
+        <Route
+          path="/perfil/:idUsuario"
+          element={
+            <PrivatePage>
+              <UserProfile />
+            </PrivatePage>
+          }
+        />
+        <Route
+          path="/perfil/:idUsuario/misAnuncios"
+          element={
+            <PrivatePage>
+              <UserAds />
+            </PrivatePage>
+          }
+        />
+        <Route
+          path="/perfil/:idUsuario/editar"
+          element={
+            <PrivatePage>
+              <EditUserProfile />
             </PrivatePage>
           }
         />

@@ -1,26 +1,28 @@
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { useContext } from "react";
 import { authContext } from "../context/auth.context";
 
 function Navbar() {
-  const navigate = useNavigate();
-  const { validateToken } = useContext(authContext);
+  const { loggedUser, isLoggedIn } = useContext(authContext);
 
-  const handleLogout = () => {
-    localStorage.removeItem("authToken");
-    validateToken();
-    navigate("/");
-  };
-  return (
-    <div>
-      <NavLink to="/anuncios">Anuncios</NavLink>
-      <NavLink to='/anuncios/favoritos'>Favoritos</NavLink>
-      <NavLink to='/anuncios/anadir'>Añadir Anuncio</NavLink>
-      <NavLink>Mensajes</NavLink>
-      <NavLink>Perfil</NavLink>
-      <span onClick={handleLogout}>Cerrar Sesión</span>
-    </div>
-  );
+  if (isLoggedIn) {
+    return (
+      <div>
+        <NavLink to="/anuncios">Anuncios</NavLink>
+        <NavLink to="/anuncios/favoritos">Favoritos</NavLink>
+        <NavLink to="/anuncios/anadir">Añadir Anuncio</NavLink>
+        <NavLink>Mensajes</NavLink>
+        <NavLink to={`/perfil/${loggedUser._id}`}>Perfil</NavLink>
+      </div>
+    );
+  } else {
+    return (
+      <div>
+        <NavLink to='/registro'>Registro</NavLink>
+        <NavLink to='/acceso'>Acceso</NavLink>
+      </div>
+    );
+  }
 }
 
 export default Navbar;

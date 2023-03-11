@@ -27,8 +27,9 @@ function AdDetails() {
         const response = await adDetailsService(idProducto);
         setAd(response.data[0]);
         setUserFavs(response.data[1])
-        if (loggedUser._id === response.data[0].owner) {
+        if (loggedUser._id === response.data[0].owner._id) {
           setIsOwner(true);
+          console.log(isOwner);
         }
       } catch (error) {
         navigate('/error')
@@ -60,6 +61,7 @@ function AdDetails() {
         <>
           <div>
             <h3>{ad.title}</h3>
+            <p>{ad.owner.location}</p>
             <Carousel adImages={ad.adImages} />
             <p>
               <span>Descripción: </span>

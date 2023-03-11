@@ -17,30 +17,30 @@ function AllAds() {
       try {
         const response = await allAdsService();
         if (categoryToSearch || valueToSearch) {
-          const categoryFilteredAds = response.data.filter((each) => {
-            if (categoryToSearch !== "") {
-              return each.category[0] === categoryToSearch;
-            } else {
-              return each;
-            }
-          });
-          const valueFilteredAds = categoryFilteredAds.filter((each) => {
-            if (
-              each.title.toLowerCase().includes(valueToSearch.toLowerCase())
-              // || each.description.toLowerCase().includes(valueToSearch.toLowerCase())
-            ) {
-              return true;
-            } else {
-              return false;
-            }
-          });
-          setAllAds(valueFilteredAds);
+          const filteredAds = response.data
+            .filter((each) => {
+              if (categoryToSearch !== "") {
+                return each.category[0] === categoryToSearch;
+              } else {
+                return each;
+              }
+            })
+            .filter((each) => {
+              return (
+                each.title
+                  .toLowerCase()
+                  .includes(valueToSearch.toLowerCase()) ||
+                each.description
+                  .toLowerCase()
+                  .includes(valueToSearch.toLowerCase())
+              );
+            });
+          setAllAds(filteredAds);
         } else {
           setAllAds(response.data);
         }
       } catch (error) {
-        console.log(error);
-        // navigate("/error");
+        navigate("/error");
       }
     };
     getData();
