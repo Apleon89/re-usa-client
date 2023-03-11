@@ -5,6 +5,7 @@ import AdDetails from "./pages/AdDetails";
 import AllAds from "./pages/AllAds";
 import EditAd from "./pages/EditAd";
 import Error from "./pages/Error";
+import FavouritesUserAds from "./pages/FavouritesUserAds";
 import Home from "./pages/Home";
 import Login from "./pages/Login";
 import NewAd from "./pages/NewAd";
@@ -47,6 +48,14 @@ function App() {
           element={
             <PrivatePage>
               <EditAd />
+            </PrivatePage>
+          }
+        />
+        <Route
+          path="/anuncios/favoritos"
+          element={
+            <PrivatePage>
+              <FavouritesUserAds />
             </PrivatePage>
           }
         />

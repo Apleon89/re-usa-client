@@ -1,16 +1,18 @@
 import { useState } from "react";
 
-function SearchBar() {
+function SearchBar(props) {
   const [category, setCategory] = useState("");
   const [search, setSearch] = useState("");
-
   return (
     <div>
       <select
         name="category"
         id="category"
         value={category}
-        onChange={(e) => setCategory(e.target.value)}
+        onChange={(e) => {
+          setCategory(e.target.value)
+          props.setCategoryToSearch(e.target.value)
+        }}
       >
         <option value="">Todas las categorías</option>
         <option value="Videojuegos">Videojuegos</option>
@@ -26,7 +28,10 @@ function SearchBar() {
         type="text"
         placeholder="search"
         value={search}
-        onChange={(e) => setSearch(e.target.value)}
+        onChange={(e) => {
+          setSearch(e.target.value)
+          props.setValueToSearch(e.target.value)
+        } }
       />
     </div>
   );

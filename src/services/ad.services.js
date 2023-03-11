@@ -21,8 +21,12 @@ const editAdService = (id, updatedAd) => {
 };
 
 const addRemoveFavService = (id, updateFav) => {
-  return service.patch(`/anuncios/${id}/favorito`, updateFav)
-}
+  return service.patch(`/anuncios/${id}/favorito`, updateFav);
+};
+
+const favouritesUserAdsService = () => {
+  return service.get("/anuncios/favoritos");
+};
 
 export {
   allAdsService,
@@ -30,5 +34,6 @@ export {
   newAdService,
   deleteAdService,
   editAdService,
-  addRemoveFavService
+  addRemoveFavService,
+  favouritesUserAdsService,
 };

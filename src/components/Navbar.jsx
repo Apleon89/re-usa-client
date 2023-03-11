@@ -14,7 +14,7 @@ function Navbar() {
   return (
     <div>
       <NavLink to="/anuncios">Anuncios</NavLink>
-      <NavLink>Favoritos</NavLink>
+      <NavLink to='/anuncios/favoritos'>Favoritos</NavLink>
       <NavLink to='/anuncios/anadir'>Añadir Anuncio</NavLink>
       <NavLink>Mensajes</NavLink>
       <NavLink>Perfil</NavLink>

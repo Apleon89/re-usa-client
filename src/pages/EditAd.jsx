@@ -23,14 +23,13 @@ function EditAd() {
     const getData = async () => {
       try {
         const response = await adDetailsService(idProducto);
-
-        setTitle(response.data.title);
-        setCategory(response.data.category);
-        setDescription(response.data.description);
-        setImage1(response.data.adImages[0]);
-        setImage2(response.data.adImages[1]);
-        setImage3(response.data.adImages[2]);
-        setImage4(response.data.adImages[3]);
+        setTitle(response.data[0].title);
+        setCategory(response.data[0].category);
+        setDescription(response.data[0].description);
+        setImage1(response.data[0].adImages[0]);
+        setImage2(response.data[0].adImages[1]);
+        setImage3(response.data[0].adImages[2]);
+        setImage4(response.data[0].adImages[3]);
       } catch (error) {
         navigate("/error");
       }
@@ -50,16 +49,16 @@ function EditAd() {
       image4,
     };
     try {
-        if (!title || !description || category === '') {
-            setErrorMessage(
-              'Los campos "Nombre de producto", "descripción" y "categoría" deben estar rellenos para poder añadir un anuncio'
-            );
-            return;
-          }
-        await editAdService(idProducto, updatedAd)
-        navigate(`/anuncios/${idProducto}`)
+      if (!title || !description || category === "") {
+        setErrorMessage(
+          'Los campos "Nombre de producto", "descripción" y "categoría" deben estar rellenos para poder añadir un anuncio'
+        );
+        return;
+      }
+      await editAdService(idProducto, updatedAd);
+      navigate(`/anuncios/${idProducto}`);
     } catch (error) {
-        navigate('/error')
+      navigate("/error");
     }
   };
   return (
