@@ -5,6 +5,7 @@ import { useContext } from "react";
 import { authContext } from "../context/auth.context";
 import { newAdService } from "../services/ad.services";
 import { useNavigate } from "react-router-dom";
+import CloudinaryAdsUploader from "../components/CloudinaryAdsUploader";
 
 function NewAd() {
   const navigate = useNavigate();
@@ -13,11 +14,19 @@ function NewAd() {
   const [title, setTitle] = useState("");
   const [category, setCategory] = useState("");
   const [description, setDescription] = useState("");
-  const [image1, setImage1] = useState("");
-  const [image2, setImage2] = useState("");
-  const [image3, setImage3] = useState("");
-  const [image4, setImage4] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [image1, setImage1] = useState(
+    "https://res.cloudinary.com/dacltsvln/image/upload/v1678707296/re-Usa/eca7lptfqlqstm28zorb.png"
+  );
+  const [image2, setImage2] = useState(
+    "https://res.cloudinary.com/dacltsvln/image/upload/v1678707296/re-Usa/eca7lptfqlqstm28zorb.png"
+  );
+  const [image3, setImage3] = useState(
+    "https://res.cloudinary.com/dacltsvln/image/upload/v1678707296/re-Usa/eca7lptfqlqstm28zorb.png"
+  );
+  const [image4, setImage4] = useState(
+    "https://res.cloudinary.com/dacltsvln/image/upload/v1678707296/re-Usa/eca7lptfqlqstm28zorb.png"
+  );
 
   const submitNewAd = (e) => {
     e.preventDefault();
@@ -32,7 +41,7 @@ function NewAd() {
       image4,
     };
     const sendData = async () => {
-      if (!title || !description || category === '') {
+      if (!title || !description || category === "") {
         setErrorMessage(
           'Los campos "Nombre de producto", "descripción" y "categoría" deben estar rellenos para poder añadir un anuncio'
         );
@@ -53,6 +62,12 @@ function NewAd() {
       <Navbar />
       <GoBack />
       <h2>Añadir anuncio</h2>
+      <CloudinaryAdsUploader
+        setImage1={setImage1}
+        setImage2={setImage2}
+        setImage3={setImage3}
+        setImage4={setImage4}
+      />
       <form>
         <label htmlFor="title">Nombre Producto:</label>
         <input
@@ -88,42 +103,6 @@ function NewAd() {
           id="description"
           value={description}
           onChange={(e) => setDescription(e.target.value)}
-        />
-        <br />
-        <label htmlFor="image1">Imagen 1:</label>
-        <input
-          type="text"
-          name="image1"
-          id="image1"
-          value={image1}
-          onChange={(e) => setImage1(e.target.value)}
-        />
-        <br />
-        <label htmlFor="image2">Imagen 2:</label>
-        <input
-          type="text"
-          name="image2"
-          id="image2"
-          value={image2}
-          onChange={(e) => setImage2(e.target.value)}
-        />
-        <br />
-        <label htmlFor="image3">Imagen 3:</label>
-        <input
-          type="text"
-          name="image3"
-          id="image3"
-          value={image3}
-          onChange={(e) => setImage3(e.target.value)}
-        />
-        <br />
-        <label htmlFor="image4">Imagen 4:</label>
-        <input
-          type="text"
-          name="image4"
-          id="image4"
-          value={image4}
-          onChange={(e) => setImage4(e.target.value)}
         />
         <br />
         <p>{errorMessage}</p>

@@ -36,7 +36,11 @@ function AllMessages() {
       ) : (
         allChats.map((each) => (
           <Link to={`/mensajes/${each.id}`} key={each.id}>
-            <OneElement img={each.img} title={each.username} />
+            {each.username.slice(0, 17) === "Usuario Eliminado" ? (
+              <OneElement img={each.img} title={"Usuario Eliminado"} />
+            ) : (
+              <OneElement img={each.img} title={each.username} />
+            )}
           </Link>
         ))
       )}

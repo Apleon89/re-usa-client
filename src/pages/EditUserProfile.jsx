@@ -1,6 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link, useNavigate, useParams } from "react-router-dom";
-import { PropagateLoader } from "react-spinners";
+import { Link, useNavigate } from "react-router-dom";
 import GoBack from "../components/GoBack";
 import Navbar from "../components/Navbar";
 import {
@@ -9,6 +8,8 @@ import {
 } from "../services/profile.services";
 import { useContext } from "react";
 import { authContext } from "../context/auth.context";
+import { uploadImageService } from "../services/upload.services";
+import { PropagateLoader } from "react-spinners";
 
 function EditUserProfile() {
   const { loggedUser } = useContext(authContext);
@@ -17,8 +18,9 @@ function EditUserProfile() {
 
   const [username, setUsername] = useState("");
   const [location, setLocation] = useState("");
-  const [image, setImage] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+  const [imageUrl, setImageUrl] = useState(null);
+  const [isUploading, setIsUploading] = useState(false);
 
   useEffect(() => {
     const getData = async () => {
@@ -26,7 +28,7 @@ function EditUserProfile() {
         const response = await getProfileService(loggedUser._id);
         setUsername(response.data.username);
         setLocation(response.data.location);
-        setImage(response.data.profileImage);
+        setImageUrl(response.data.profileImage);
       } catch (error) {
         navigate("/error");
         console.log(error);
@@ -35,13 +37,31 @@ function EditUserProfile() {
     getData();
   }, []);
 
+  const handleFileUpload = async (e) => {
+    if (!e.target.files[0]) {
+      return;
+    }
+    setIsUploading(true);
+
+    const uploadData = new FormData();
+    uploadData.append("image", e.target.files[0]);
+    try {
+      const response = await uploadImageService(uploadData);
+      setImageUrl(response.data.imageUrl);
+      setIsUploading(false);
+    } catch (error) {
+      navigate("/error");
+      console.log(error);
+    }
+  };
+
   const editProfile = async (e) => {
     e.preventDefault();
 
     const updatedProfile = {
       username,
       location,
-      profileImage: image,
+      profileImage: imageUrl,
     };
     try {
       await updateUserProfileService(loggedUser._id, updatedProfile);
@@ -59,6 +79,21 @@ function EditUserProfile() {
     <>
       <Navbar />
       <GoBack />
+      <div>
+        {imageUrl && (
+          <div>
+            <img src={imageUrl} alt="img" width={200} />
+          </div>
+        )}
+        {isUploading && <PropagateLoader />}
+        <label>Imagen de perfil:</label>
+        <input
+          type="file"
+          name="image"
+          onChange={handleFileUpload}
+          disabled={isUploading}
+        />
+      </div>
       <form>
         <label htmlFor="username">Nombre Usuario:</label>
         <input
@@ -76,15 +111,6 @@ function EditUserProfile() {
           id="location"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
-        />
-        <br />
-        <label htmlFor="image">Imagen de perfil:</label>
-        <input
-          type="text"
-          name="image"
-          id="image"
-          value={image}
-          onChange={(e) => setImage(e.target.value)}
         />
         <br />
         <div>{errorMessage !== "" && <h2>{errorMessage}</h2>}</div>

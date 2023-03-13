@@ -60,7 +60,10 @@ function AdDetails() {
         <>
           <div>
             <h3>{ad.title}</h3>
-            <p>{ad.owner.location}</p>
+            <div>
+              <p>{ad.owner.username}</p>
+              <p>{ad.owner.location}</p>
+            </div>
             <Carousel adImages={ad.adImages} />
             <p>
               <span>Descripción: </span>

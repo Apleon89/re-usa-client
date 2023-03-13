@@ -12,7 +12,6 @@ function ChatView() {
   const navigate = useNavigate();
   const params = useParams();
 
-
   const [userB, setUserB] = useState(null);
   const [chat, setChat] = useState(null);
   const [newMessage, setNewMessage] = useState("");
@@ -50,7 +49,13 @@ function ChatView() {
       <Navbar />
       <div>
         <GoBack />
-        {!userB ? <h2>...Buscando</h2> : <h2>{userB.username}</h2>}
+        {!userB ? (
+          <h2>...Buscando</h2>
+        ) : userB.username.slice(0, 17) === "Usuario Eliminado" ? (
+          <h2>Usuario Eliminado</h2>
+        ) : (
+          <h2>{userB.username}</h2>
+        )}
       </div>
       <div>
         {!chat ? (
@@ -71,7 +76,12 @@ function ChatView() {
                     />
                   </div>
                   <div>
-                    <h4>{each.transmitter.username}</h4>
+                    {each.transmitter.username.slice(0, 17) ===
+                    "Usuario Eliminado" ? (
+                      <h4>Usuario Eliminado</h4>
+                    ) : (
+                      <h4>{each.transmitter.username}</h4>
+                    )}
                     <p>
                       {each.updatedAt.slice(0, 10)}{" "}
                       {each.updatedAt.slice(11, 16)}
