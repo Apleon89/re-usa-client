@@ -69,7 +69,7 @@ function AdDetails() {
               <span>Descripción: </span>
               {ad.description}
             </p>
-            <p>{ad.updatedAt}</p>
+            <p>{new Date(ad.updatedAt).toLocaleDateString()}</p>
           </div>
           {isOwner ? (
             <>

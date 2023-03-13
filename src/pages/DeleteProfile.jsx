@@ -5,7 +5,7 @@ import { deleteUserService } from "../services/profile.services";
 
 function DeleteProfile() {
   const navigate = useNavigate();
-  const { loggedUser } = useContext(authContext);
+  const { loggedUser, validateToken } = useContext(authContext);
   const [deletedAccount, setDeletedAccount] = useState(false);
 
   const deleteUSerAccount = async () => {
@@ -14,10 +14,12 @@ function DeleteProfile() {
       setDeletedAccount(true);
       setTimeout(() => {
         navigate("/");
+        localStorage.removeItem("authToken");
+        validateToken();
       }, 2000);
     } catch (error) {
       console.log(error);
-      navigate('/error')
+      navigate("/error");
     }
   };
   return (

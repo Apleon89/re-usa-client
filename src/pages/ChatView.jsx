@@ -18,6 +18,9 @@ function ChatView() {
   const [refreshPage, setRefreshPage] = useState("");
 
   useEffect(() => {
+    const interval = setInterval( () => {
+      getData()
+    }, 6000)
     const getData = async () => {
       try {
         const response = await getChatService(params.idUsuario);
@@ -28,6 +31,9 @@ function ChatView() {
       }
     };
     getData();
+    return () =>{
+      clearInterval(interval)
+    } 
   }, [refreshPage]);
 
   const sendMessage = async (e) => {
@@ -83,10 +89,12 @@ function ChatView() {
                       <h4>{each.transmitter.username}</h4>
                     )}
                     <p>
-                      {each.updatedAt.slice(0, 10)}{" "}
+                      {new Date(each.updatedAt).toLocaleDateString()}{" "}
                       {each.updatedAt.slice(11, 16)}
                     </p>
                     <p>{each.message}</p>
+                    <button>Editar</button>
+                    <button>Eliminar</button>
                   </div>
                 </div>
               );
@@ -96,7 +104,7 @@ function ChatView() {
                   <div>
                     <h4>{each.transmitter.username}</h4>
                     <p>
-                      {each.updatedAt.slice(0, 10)}{" "}
+                      {new Date(each.updatedAt).toLocaleDateString()}{" "}
                       {each.updatedAt.slice(11, 16)}
                     </p>
                     <p>{each.message}</p>
