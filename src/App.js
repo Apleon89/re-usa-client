@@ -3,6 +3,9 @@ import "./App.css";
 import PrivatePage from "./components/PrivatePage";
 import AdDetails from "./pages/AdDetails";
 import AllAds from "./pages/AllAds";
+import AllMessages from "./pages/AllMessages";
+import ChatView from "./pages/ChatView";
+import DeleteProfile from "./pages/DeleteProfile";
 import EditAd from "./pages/EditAd";
 import EditUserProfile from "./pages/EditUserProfile";
 import Error from "./pages/Error";
@@ -79,6 +82,16 @@ function App() {
             </PrivatePage>
           }
         />
+        <Route
+          path="/perfil/:idUsuario/borrarCuenta"
+          element={
+            <PrivatePage>
+              <DeleteProfile />
+            </PrivatePage>
+          }
+        />
+        <Route path="/mensajes" element={<PrivatePage><AllMessages /></PrivatePage>} />
+        <Route path="/mensajes/:idUsuario" element={<PrivatePage><ChatView /></PrivatePage>} />
 
         <Route path="/error" element={<Error />} />
         <Route path="*" element={<NotFound />} />

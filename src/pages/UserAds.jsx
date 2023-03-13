@@ -36,11 +36,17 @@ function UserAds() {
         </>
       ) : (
         <>
-          {userAds.map((each) => (
+        <h3>Mis anuncios</h3>
+          {userAds.length === 0
+          ?
+          <p>No hay anuncios publicados</p>
+          :
+          userAds.map((each) => (
             <Link to={`/anuncios/${each._id}`} key={each._id}>
               <OneElement img={each.adImages[0]} title={each.title} />
             </Link>
-          ))}
+          ))
+          }
         </>
       )}
     </>

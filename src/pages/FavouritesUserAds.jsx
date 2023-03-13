@@ -17,7 +17,7 @@ function FavouritesUserAds() {
         const response = await favouritesUserAdsService();
         setFavouritesAds(response.data);
       } catch (error) {
-        navigate('/error')
+        navigate("/error");
       }
     };
     getData();
@@ -33,15 +33,12 @@ function FavouritesUserAds() {
           <h3>Buscando</h3>
           <PropagateLoader />
         </>
+      ) : favouritesAds.length === 0 ? (
+        <h4>No hay anuncios favoritos.</h4>
       ) : (
-        favouritesAds.length === 0 ?
-        <h4>No hay anuncios favoritos.</h4> :
         favouritesAds.map((each) => (
           <Link to={`/anuncios/${each._id}`} key={each._id}>
-            <OneElement
-              img={each.adImages[0]}
-              title={each.title}
-            />
+            <OneElement img={each.adImages[0]} title={each.title} />
           </Link>
         ))
       )}

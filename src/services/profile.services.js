@@ -12,4 +12,13 @@ const updateUserProfileService = (id, updatedProfile) => {
   return service.patch(`/perfil/${id}/editar`, updatedProfile);
 };
 
-export { getProfileService, getUserAdsService, updateUserProfileService };
+const deleteUserService = (id) => {
+  return service.patch(`/perfil/${id}/delete`);
+};
+
+export {
+  getProfileService,
+  getUserAdsService,
+  updateUserProfileService,
+  deleteUserService,
+};

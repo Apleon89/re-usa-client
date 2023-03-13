@@ -18,7 +18,7 @@ function AdDetails() {
   const { loggedUser } = useContext(authContext);
 
   const [ad, setAd] = useState(null);
-  const [userFavs, setUserFavs ] = useState(null)
+  const [userFavs, setUserFavs] = useState(null);
   const [isOwner, setIsOwner] = useState(false);
 
   useEffect(() => {
@@ -26,13 +26,12 @@ function AdDetails() {
       try {
         const response = await adDetailsService(idProducto);
         setAd(response.data[0]);
-        setUserFavs(response.data[1])
+        setUserFavs(response.data[1]);
         if (loggedUser._id === response.data[0].owner._id) {
           setIsOwner(true);
-          console.log(isOwner);
         }
       } catch (error) {
-        navigate('/error')
+        navigate("/error");
       }
     };
     getData();
@@ -41,7 +40,7 @@ function AdDetails() {
   const deleteAd = async () => {
     try {
       await deleteAdService(idProducto);
-      navigate(-1)
+      navigate(-1);
     } catch (error) {
       navigate("/error");
     }
@@ -78,8 +77,11 @@ function AdDetails() {
             </>
           ) : (
             <>
-              <IsAdFavourite idProducto={idProducto} userFavs={userFavs.favouritesAds} />
-              <Link>
+              <IsAdFavourite
+                idProducto={idProducto}
+                userFavs={userFavs.favouritesAds}
+              />
+              <Link to={`/mensajes/${ad.owner._id}`}>
                 <button>Mensaje</button>
               </Link>
             </>

@@ -11,7 +11,7 @@ function Navbar() {
         <NavLink to="/anuncios">Anuncios</NavLink>
         <NavLink to="/anuncios/favoritos">Favoritos</NavLink>
         <NavLink to="/anuncios/anadir">Añadir Anuncio</NavLink>
-        <NavLink>Mensajes</NavLink>
+        <NavLink to='/mensajes'>Mensajes</NavLink>
         <NavLink to={`/perfil/${loggedUser._id}`}>Perfil</NavLink>
       </div>
     );

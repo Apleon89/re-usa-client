@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useNavigate, useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { PropagateLoader } from "react-spinners";
 import GoBack from "../components/GoBack";
 import Navbar from "../components/Navbar";
@@ -90,6 +90,9 @@ function EditUserProfile() {
         <div>{errorMessage !== "" && <h2>{errorMessage}</h2>}</div>
         <button onClick={editProfile}>Editar</button>
       </form>
+      <Link to={`/perfil/${loggedUser._id}/borrarCuenta`}>
+        <button>Borrar cuenta</button>
+      </Link>
     </>
   );
 }
