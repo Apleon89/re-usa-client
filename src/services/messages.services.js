@@ -12,4 +12,23 @@ const getAllOpenChats = () => {
   return service.get("/mensajes");
 };
 
-export { getChatService, sendNewMessageService, getAllOpenChats };
+const deleteAllMssgsOneUserService = (idUsuario) => {
+  return service.delete(`/mensajes/${idUsuario}`);
+};
+
+const deleteOneMessageService = (idMensaje) => {
+  return service.delete(`/mensajes/${idMensaje}`);
+};
+
+const updateOneMessageService = (idMensaje, updatedMssg) => {
+  return service.patch(`/mensajes/${idMensaje}`, updatedMssg);
+};
+
+export {
+  getChatService,
+  sendNewMessageService,
+  getAllOpenChats,
+  deleteAllMssgsOneUserService,
+  deleteOneMessageService,
+  updateOneMessageService,
+};

@@ -7,6 +7,7 @@ import {
   sendNewMessageService,
 } from "../services/messages.services";
 import { PropagateLoader } from "react-spinners";
+import EditMessages from "../components/EditMessages";
 
 function ChatView() {
   const navigate = useNavigate();
@@ -18,23 +19,24 @@ function ChatView() {
   const [refreshPage, setRefreshPage] = useState("");
 
   useEffect(() => {
-    const interval = setInterval( () => {
-      getData()
-    }, 6000)
-    const getData = async () => {
-      try {
-        const response = await getChatService(params.idUsuario);
-        setUserB(response.data[0]);
-        setChat(response.data[1]);
-      } catch (error) {
-        navigate("/error");
-      }
-    };
+    const interval = setInterval(() => {
+      getData();
+    }, 6000);
     getData();
-    return () =>{
-      clearInterval(interval)
-    } 
+    return () => {
+      clearInterval(interval);
+    };
   }, [refreshPage]);
+  
+  const getData = async () => {
+    try {
+      const response = await getChatService(params.idUsuario);
+      setUserB(response.data[0]);
+      setChat(response.data[1]);
+    } catch (error) {
+      navigate("/error");
+    }
+  };
 
   const sendMessage = async (e) => {
     e.preventDefault();
@@ -93,8 +95,6 @@ function ChatView() {
                       {each.updatedAt.slice(11, 16)}
                     </p>
                     <p>{each.message}</p>
-                    <button>Editar</button>
-                    <button>Eliminar</button>
                   </div>
                 </div>
               );
@@ -108,6 +108,7 @@ function ChatView() {
                       {each.updatedAt.slice(11, 16)}
                     </p>
                     <p>{each.message}</p>
+                    <EditMessages message={each} getData={getData}/>
                   </div>
                   <div>
                     <img
