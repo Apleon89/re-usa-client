@@ -1,0 +1,87 @@
+:root {
+    --amarillo: rgb(255, 230, 99);
+    --gris: rgb(115, 115, 115);
+    --gris-oscuro: rgb(86, 86, 86);
+    --verde-oscuro: rgb(114, 200, 43);
+    --verde-claro: rgb(208, 227, 12)
+}
+
+.body {
+    background-color: var(--amarillo);
+    min-height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+.video-home {
+    width: 60vw;
+    padding-top: 10vh;
+}
+
+.eslogan-text {
+    color: var(--gris);
+    font-size: 1.3rem;
+    max-width: 80vw;
+    margin: 5vh auto;
+}
+
+.frase-anuncios {
+    color: var(--gris);
+    font-size: 0.8rem;
+}
+
+.btn {
+    margin-bottom: 4vh;
+    padding: 1vh 3vw;
+    border-radius: 10px;
+    border: 1px solid var(--gris);
+    background-color: whitesmoke;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    color: rgb(86, 86, 86);
+    transition: transform 0.3s ease-out;
+}
+
+.btn:hover {
+    transform: translateY(-2px) translateZ(0) scale(1.05);
+}
+
+.btn-registro {
+    margin-top: 3vh;
+    margin-right: 5vw;
+    width: 25vw;
+}
+
+.btn-acceso {
+    width: 25vw;
+}
+
+.footer {
+    color: var(--gris);
+}
+
+@media (min-width: 768px) {
+    .body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .video-home {
+        width: 40vw;
+    }
+
+    .eslogan-text {
+        font-size: 2rem;
+        max-width: 50vw;
+    }
+
+    .frase-anuncios {
+        font-size: 1.2rem;
+    }
+
+    .btn {
+        max-width: 15vw;
+
+    }
+}
