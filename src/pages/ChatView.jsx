@@ -16,7 +16,6 @@ function ChatView() {
   const [userB, setUserB] = useState(null);
   const [chat, setChat] = useState(null);
   const [newMessage, setNewMessage] = useState("");
-  const [refreshPage, setRefreshPage] = useState("");
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -26,8 +25,8 @@ function ChatView() {
     return () => {
       clearInterval(interval);
     };
-  }, [refreshPage]);
-  
+  }, []);
+
   const getData = async () => {
     try {
       const response = await getChatService(params.idUsuario);
@@ -46,7 +45,7 @@ function ChatView() {
     try {
       await sendNewMessageService(params.idUsuario, message);
       setNewMessage("");
-      setRefreshPage(newMessage);
+      getData();
     } catch (error) {
       navigate("/error");
     }
@@ -108,7 +107,7 @@ function ChatView() {
                       {each.updatedAt.slice(11, 16)}
                     </p>
                     <p>{each.message}</p>
-                    <EditMessages message={each} getData={getData}/>
+                    <EditMessages message={each} getData={getData} />
                   </div>
                   <div>
                     <img

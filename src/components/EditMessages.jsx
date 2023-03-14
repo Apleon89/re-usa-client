@@ -1,34 +1,37 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { deleteOneMessageService, updateOneMessageService } from "../services/messages.services";
+import {
+  deleteOneMessageService,
+  updateOneMessageService,
+} from "../services/messages.services";
 
 function EditMessages(props) {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const [showEdit, setShowEdit] = useState(false);
   const [editInput, setEditInput] = useState(props.message.message);
 
   const editMessage = async (e) => {
-    e.preventDefault()
+    e.preventDefault();
     const updatedMssg = {
-      message: editInput
-    }
+      message: editInput,
+    };
     try {
-      await updateOneMessageService(props.message._id, updatedMssg)
-      setShowEdit(!showEdit)
-      props.getData()
+      await updateOneMessageService(props.message._id, updatedMssg);
+      setShowEdit(!showEdit);
+      props.getData();
     } catch (error) {
-      navigate('/error')
+      navigate("/error");
     }
-  }
+  };
 
   const deleteMessage = async () => {
     try {
-      await deleteOneMessageService(props.message._id)
-      props.getData()
+      await deleteOneMessageService(props.message._id);
+      props.getData();
     } catch (error) {
-      navigate('/error')
+      navigate("/error");
     }
-  }
+  };
 
   return (
     <div>

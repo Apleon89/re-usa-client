@@ -13,7 +13,7 @@ const getAllOpenChats = () => {
 };
 
 const deleteAllMssgsOneUserService = (idUsuario) => {
-  return service.delete(`/mensajes/${idUsuario}`);
+  return service.delete(`/mensajes/${idUsuario}/borrarTodos`);
 };
 
 const deleteOneMessageService = (idMensaje) => {
