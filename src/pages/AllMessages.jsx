@@ -1,12 +1,16 @@
 import { useEffect, useState } from "react";
-import { deleteAllMssgsOneUserService, getAllOpenChats } from "../services/messages.services";
+import {
+  deleteAllMssgsOneUserService,
+  getAllOpenChats,
+} from "../services/messages.services";
 import Navbar from "../components/Navbar";
 import OneElement from "../components/OneElement";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { PropagateLoader } from "react-spinners";
 import GoBack from "../components/GoBack";
 
 function AllMessages() {
+  const navigate = useNavigate();
   const [allChats, setAllChats] = useState(null);
   const [deleteButton, setDeleteButton] = useState(false);
 
@@ -16,16 +20,16 @@ function AllMessages() {
     }, 6000);
     getData();
     return () => {
-      clearInterval(interval)
-    }
+      clearInterval(interval);
+    };
   }, []);
-  
+
   const getData = async () => {
     try {
       const response = await getAllOpenChats();
       setAllChats(response.data);
     } catch (error) {
-      console.log(error);
+      navigate("/error");
     }
   };
 
@@ -35,10 +39,10 @@ function AllMessages() {
 
   const deleteAllMsgsOneUser = async (id) => {
     try {
-      await deleteAllMssgsOneUserService(id)
-      getData()
+      await deleteAllMssgsOneUserService(id);
+      getData();
     } catch (error) {
-      console.log(error);
+      navigate("/error");
     }
   };
 

@@ -44,7 +44,6 @@ function UserAds() {
         }
       } catch (error) {
         navigate("/error");
-        console.log(error);
       }
     };
     getData();

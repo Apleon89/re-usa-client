@@ -30,7 +30,6 @@ function Login() {
         setErrorMessage(error.response.data.errorMessage);
       } else {
         navigate("/error");
-        console.log(error);
       }
     }
   };

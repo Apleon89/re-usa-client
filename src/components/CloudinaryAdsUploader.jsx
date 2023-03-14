@@ -14,14 +14,14 @@ function CloudinaryAdsUploader(props) {
   const [isUploading3, setIsUploading3] = useState(false);
   const [isUploading4, setIsUploading4] = useState(false);
 
-    useEffect( () => {
-        if( props.userImages) {
-            setImageUrl1(props.userImages[0])
-            setImageUrl2(props.userImages[1])
-            setImageUrl3(props.userImages[2])
-            setImageUrl4(props.userImages[3])
-        }
-    }, [])
+  useEffect(() => {
+    if (props.userImages) {
+      setImageUrl1(props.userImages[0]);
+      setImageUrl2(props.userImages[1]);
+      setImageUrl3(props.userImages[2]);
+      setImageUrl4(props.userImages[3]);
+    }
+  }, []);
 
   const handleFileUpload1 = async (e) => {
     if (!e.target.files[0]) {
@@ -38,7 +38,6 @@ function CloudinaryAdsUploader(props) {
       setIsUploading1(false);
     } catch (error) {
       navigate("/error");
-      console.log(error);
     }
   };
 
@@ -57,7 +56,6 @@ function CloudinaryAdsUploader(props) {
       setIsUploading2(false);
     } catch (error) {
       navigate("/error");
-      console.log(error);
     }
   };
 
@@ -76,7 +74,6 @@ function CloudinaryAdsUploader(props) {
       setIsUploading3(false);
     } catch (error) {
       navigate("/error");
-      console.log(error);
     }
   };
 
@@ -95,7 +92,6 @@ function CloudinaryAdsUploader(props) {
       setIsUploading4(false);
     } catch (error) {
       navigate("/error");
-      console.log(error);
     }
   };
 
@@ -110,19 +106,19 @@ function CloudinaryAdsUploader(props) {
         )}
         {imageUrl2 && (
           <div>
-          <p>2</p>
+            <p>2</p>
             <img src={imageUrl2} alt="img" width={50} />
           </div>
         )}
         {imageUrl3 && (
           <div>
-          <p>3</p>
+            <p>3</p>
             <img src={imageUrl3} alt="img" width={50} />
           </div>
         )}
         {imageUrl4 && (
           <div>
-          <p>4</p>
+            <p>4</p>
             <img src={imageUrl4} alt="img" width={50} />
           </div>
         )}

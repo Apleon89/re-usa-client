@@ -31,7 +31,6 @@ function EditUserProfile() {
         setImageUrl(response.data.profileImage);
       } catch (error) {
         navigate("/error");
-        console.log(error);
       }
     };
     getData();
@@ -51,7 +50,6 @@ function EditUserProfile() {
       setIsUploading(false);
     } catch (error) {
       navigate("/error");
-      console.log(error);
     }
   };
 
@@ -71,7 +69,6 @@ function EditUserProfile() {
         setErrorMessage(error.response.data.errorMessage);
       } else {
         navigate("/error");
-        console.log(error);
       }
     }
   };
