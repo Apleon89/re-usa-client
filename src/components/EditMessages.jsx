@@ -21,9 +21,9 @@ function EditMessages(props) {
     }
   }
 
-  const deleteMessage = async (idMensaje) => {
+  const deleteMessage = async () => {
     try {
-      await deleteOneMessageService(idMensaje)
+      await deleteOneMessageService(props.message._id)
       props.getData()
     } catch (error) {
       navigate('/error')
@@ -43,7 +43,7 @@ function EditMessages(props) {
             />
             <button onClick={editMessage}>Editar</button>
           </form>
-          <button onClick={() => deleteMessage(props.message._id)}>Borrar</button>
+          <button onClick={deleteMessage}>Borrar</button>
         </div>
       )}
     </div>
