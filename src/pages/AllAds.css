@@ -1,0 +1,14 @@
+.allAds-container {
+    display: block;
+    padding-bottom: 7vh;
+}
+
+@media (min-width: 768px) {
+    .allAds-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 5vw;
+        padding-top: 5vh;
+    }
+}

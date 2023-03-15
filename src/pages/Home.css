@@ -1,5 +1,6 @@
 :root {
     --amarillo: rgb(255, 230, 99);
+    --amarillo-claro: rgba(255, 230, 99, 0.1);
     --gris: rgb(115, 115, 115);
     --gris-oscuro: rgb(86, 86, 86);
     --verde-oscuro: rgb(114, 200, 43);

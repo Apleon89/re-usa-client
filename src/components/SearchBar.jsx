@@ -1,11 +1,12 @@
 import { useState } from "react";
+import './SearchBar.css'
 
 function SearchBar(props) {
   const [category, setCategory] = useState("");
   const [search, setSearch] = useState("");
   return (
-    <div>
-      <select
+    <div className="searchBar-body">
+      <select className="select-searchBar"
         name="category"
         id="category"
         value={category}
@@ -25,8 +26,9 @@ function SearchBar(props) {
         <option value="Libros">Libros</option>
       </select>
       <input
+        className="input-searchBar"
         type="text"
-        placeholder="search"
+        placeholder="Buscar"
         value={search}
         onChange={(e) => {
           setSearch(e.target.value)

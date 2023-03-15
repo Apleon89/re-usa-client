@@ -5,6 +5,7 @@ import Navbar from "../components/Navbar";
 import OneElement from "../components/OneElement";
 import SearchBar from "../components/SearchBar";
 import { allAdsService } from "../services/ad.services";
+import './AllAds.css'
 
 function AllAds() {
   const navigate = useNavigate();
@@ -63,7 +64,8 @@ function AllAds() {
       ) : allAds.length === 0 ? (
         <h4>No hay anuncios</h4>
       ) : (
-        allAds.map((each) => (
+        <div className="allAds-container">
+        {allAds.map((each) => (
           <Link to={`/anuncios/${each._id}`} key={each._id}>
             <OneElement
               img={each.adImages[0]}
@@ -71,7 +73,8 @@ function AllAds() {
               username={each.owner.username}
             />
           </Link>
-        ))
+        ))}
+        </div>
       )}
     </div>
   );

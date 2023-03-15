@@ -7,7 +7,7 @@
     bottom: 0;
     width: 100%;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-around;
     align-items: center;
     background-color: var(--amarillo);
     height: 7vh;
@@ -37,20 +37,19 @@
     border: 1px solid var(--gris);
 }
 
-.web-navBar {
+.web-navBar,
+.logo {
     display: none;
 }
 
 .notLogin-navBar {
-    display: block;
-    position: fixed;
-    top: 0;
-    right: 0;
-    width: 100%;
     display: flex;
     justify-content: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
     gap: 3vw;
-    padding: 2vh;
+    padding: 2vh 0;
     background-color: var(--amarillo);
 }
 
@@ -74,7 +73,15 @@
         gap: 3vw;
         padding: 2vh;
         background-color: var(--amarillo);
+    }
 
+    .logo{
+        display: block;
+        width: 9rem;
+        z-index: 999;
+        position: fixed;
+        left: 10vw;
+        margin-top: 1vh;
     }
 
     .web-navBar a {

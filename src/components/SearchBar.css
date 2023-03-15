@@ -1,0 +1,40 @@
+.searchBar-body {
+    height: 7vh;
+    display: flex;
+    gap: 5vw;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--amarillo);
+}
+
+.select-searchBar{
+    width: 30vw;
+    border-radius: 5px;
+    border: 1px solid var(--gris);
+    height: 4vh;
+    background-color: whitesmoke;
+}
+
+.input-searchBar {
+    width: 30vw;
+    border-radius: 5px;
+    border: 1px solid var(--gris);
+    height: 3.5vh;
+    background-color: whitesmoke;
+}
+
+.select-searchBar:focus, 
+.input-searchBar:focus {
+    outline: none;
+}
+
+@media (min-width: 768px) {
+    .searchBar-body{
+        height: 14vh;
+        align-items: end;
+    }
+    .select-searchBar,
+    .input-searchBar {
+        margin-bottom: 2vh;
+    }
+}
