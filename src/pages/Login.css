@@ -1,5 +1,4 @@
-
-.body-signup {
+.body-login {
     background-color: var(--amarillo);
     min-height: 100vh;
     padding: 0;
@@ -10,24 +9,24 @@
     justify-content: space-evenly;
 }
 
-.registrate-titulo {
+.entra-titulo {
     margin: 0;
     color: var(--gris-oscuro);
     font-size: 2rem;
 }
 
-.signup-form {
+.login-form {
     width: 50vw;
     border: 1px solid var(--gris);
     padding: 2vh;
     border-radius: 10px;
 }
 
-.signup-form button {
+.login-form button {
     margin-top: 2vh;
 }
 
-.signup-div{
+.login-div{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -36,11 +35,11 @@
     width: 98%;
 }
 
-.signup-div label {
+.login-div label {
     color: var(--gris);
 }
 
-.signup-div input {
+.login-div input {
     width: 100%;
     border-radius: 5px;
     border: 1px solid var(--gris);
@@ -48,21 +47,21 @@
     background-color: whitesmoke;
 }
 
-.signup-div input:focus {
+.login-div input:focus {
     outline: none;
 }
 
-.link-acceso-signup{
+.link-acceso-login{
     color: var(--gris);
 }
 
-.link-acceso-signup a {
+.link-acceso-login a {
     color: var(--gris-oscuro);
 }
 
 @media (min-width: 768px) {
     
-    .signup-form {
+    .login-form {
         width: 30vw;
     }
 
