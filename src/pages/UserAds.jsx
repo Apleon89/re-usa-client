@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 import OneElement from "../components/OneElement";
 import SearchBar from "../components/SearchBar";
 import { getUserAdsService } from "../services/profile.services";
+import './UserAds.css'
 
 function UserAds() {
   const params = useParams();
@@ -50,9 +51,20 @@ function UserAds() {
   }, [categoryToSearch, valueToSearch]);
 
   return (
-    <>
+    <div className="userAds-body">
       <Navbar />
+      <div className="userAds-title-container">
       <GoBack />
+      <h3>Mis anuncios</h3>
+      <div className="divStyle"></div>
+      </div>
+      <div className="search-container">
+      <SearchBar
+        setCategoryToSearch={setCategoryToSearch}
+        setValueToSearch={setValueToSearch}
+      />
+      </div>
+      <div className="userAds-container">
       {!userAds ? (
         <>
           <h3>Buscando</h3>
@@ -60,11 +72,6 @@ function UserAds() {
         </>
       ) : (
         <>
-          <h3>Mis anuncios</h3>
-          <SearchBar
-            setCategoryToSearch={setCategoryToSearch}
-            setValueToSearch={setValueToSearch}
-          />
           {userAds.length === 0 ? (
             <p>No hay anuncios publicados</p>
           ) : (
@@ -76,7 +83,8 @@ function UserAds() {
           )}
         </>
       )}
-    </>
+      </div>
+    </div>
   );
 }
 

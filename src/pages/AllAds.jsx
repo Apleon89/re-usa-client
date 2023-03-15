@@ -48,7 +48,7 @@ function AllAds() {
   }, [categoryToSearch, valueToSearch]);
 
   return (
-    <div>
+    <div className="allAds-body">
       <Navbar />
 
       <SearchBar

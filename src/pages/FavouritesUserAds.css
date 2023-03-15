@@ -1,0 +1,37 @@
+.favAds-title-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--amarillo);
+    height: 7vh;
+    position: fixed;
+    width: 100%;
+}
+
+.search-container {
+    padding-top: 7vh;
+    
+}
+
+.favAds-title-container h3 {
+    color: var(--gris-oscuro);
+}
+
+.favAds-container {
+    padding-bottom: 7vh;
+}
+
+@media (min-width: 768px) {
+    .favAds-body {
+        padding-top: 7vh;
+    }
+
+    .favAds-container{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 5vw;
+        padding-top: 5vh;
+    }
+
+}

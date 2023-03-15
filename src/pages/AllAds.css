@@ -4,6 +4,10 @@
 }
 
 @media (min-width: 768px) {
+    .allAds-body {
+        padding-top: 7vh;
+    }
+
     .allAds-container {
         display: flex;
         justify-content: space-around;

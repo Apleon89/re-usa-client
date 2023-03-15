@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 import OneElement from "../components/OneElement";
 import SearchBar from "../components/SearchBar";
 import { favouritesUserAdsService } from "../services/ad.services";
+import "./FavouritesUserAds.css";
 
 function FavouritesUserAds() {
   const navigate = useNavigate();
@@ -49,29 +50,36 @@ function FavouritesUserAds() {
   }, [categoryToSearch, valueToSearch]);
 
   return (
-    <>
+    <div className="favAds-body">
       <Navbar />
-      <GoBack />
-      <h3>Favoritos</h3>
-      <SearchBar
-        setCategoryToSearch={setCategoryToSearch}
-        setValueToSearch={setValueToSearch}
-      />
-      {!favouritesAds ? (
-        <>
-          <h3>Buscando</h3>
-          <PropagateLoader />
-        </>
-      ) : favouritesAds.length === 0 ? (
-        <h4>No hay anuncios favoritos.</h4>
-      ) : (
-        favouritesAds.map((each) => (
-          <Link to={`/anuncios/${each._id}`} key={each._id}>
-            <OneElement img={each.adImages[0]} title={each.title} />
-          </Link>
-        ))
-      )}
-    </>
+      <div className="favAds-title-container">
+        <GoBack />
+        <h3>Favoritos</h3>
+        <div className="divStyle"></div>
+      </div>
+      <div className="search-container">
+        <SearchBar
+          setCategoryToSearch={setCategoryToSearch}
+          setValueToSearch={setValueToSearch}
+        />
+      </div>
+      <div className="favAds-container">
+        {!favouritesAds ? (
+          <>
+            <h3>Buscando</h3>
+            <PropagateLoader />
+          </>
+        ) : favouritesAds.length === 0 ? (
+          <h4>No hay anuncios favoritos.</h4>
+        ) : (
+          favouritesAds.map((each) => (
+            <Link to={`/anuncios/${each._id}`} key={each._id}>
+              <OneElement img={each.adImages[0]} title={each.title} />
+            </Link>
+          ))
+        )}
+      </div>
+    </div>
   );
 }
 

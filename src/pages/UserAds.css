@@ -1,0 +1,37 @@
+.userAds-title-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--amarillo);
+    height: 7vh;
+    position: fixed;
+    width: 100%;
+}
+
+.search-container {
+    padding-top: 7vh;
+    
+}
+
+.userAds-title-container h3 {
+    color: var(--gris-oscuro);
+}
+
+.uaserAds-container {
+    padding-bottom: 7vh;
+}
+
+@media (min-width: 768px) {
+    .userAds-body {
+        padding-top: 7vh;
+    }
+
+    .userAds-container{
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 5vw;
+        padding-top: 5vh;
+    }
+
+}

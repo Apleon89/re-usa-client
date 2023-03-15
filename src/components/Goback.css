@@ -1,0 +1,15 @@
+.btn-atras {
+    
+    padding: 0.5vh 1.5vw;
+    border-radius: 10px;
+    border: 1px solid var(--gris);
+    background-color: whitesmoke;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    color: rgb(86, 86, 86);
+    transition: transform 0.3s ease-out;
+}
+
+.btn-atras:hover {
+    transform: translateY(-2px) translateZ(0) scale(1.05);
+}

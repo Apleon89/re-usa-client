@@ -81,6 +81,7 @@
         z-index: 999;
         position: fixed;
         left: 10vw;
+        top: 0;
         margin-top: 1vh;
     }
 

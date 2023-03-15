@@ -1,10 +1,11 @@
 .searchBar-body {
     height: 7vh;
+    min-height: 45px;
     display: flex;
     gap: 5vw;
     justify-content: center;
     align-items: center;
-    background-color: var(--amarillo);
+    background-color: var(--amarillo-claro);
 }
 
 .select-searchBar{
@@ -30,7 +31,7 @@
 
 @media (min-width: 768px) {
     .searchBar-body{
-        height: 14vh;
+        height: 7vh;
         align-items: end;
     }
     .select-searchBar,
