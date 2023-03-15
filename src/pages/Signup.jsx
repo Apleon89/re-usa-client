@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { signupService } from "../services/auth.services";
+import "./Signup.css";
 
 function Signup() {
   const navigate = useNavigate();
@@ -31,60 +32,64 @@ function Signup() {
     }
   };
   return (
-    <>
-      <h2>Regístrate</h2>
-      <form>
-        <div>
-          <label htmlFor="username">Nombre de Usuario:</label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="email">Email:</label>
-          <input
-            type="text"
-            id="email"
-            name="email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="password">Contraseña:</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-          />
-        </div>
-        <div>
-          <label htmlFor="repeatPassword">Repetir contraseña:</label>
-          <input
-            type="password"
-            id="repeatPassword"
-            name="repeatPassword"
-            value={repeatPassword}
-            onChange={(e) => setRepeatPassword(e.target.value)}
-          />
-        </div>
-        <div>{errorMessage !== "" && <h2>{errorMessage}</h2>}</div>
-        <button onClick={handleSubmit}>Registrarse</button>
-      </form>
-      <p>¿Registrado?</p>
-      <Link to="/acceso">
-        <button>Accede</button>
-      </Link>
-      <Link to="/anuncios">
-        <button>Ver anuncios</button>
-      </Link>
-    </>
+    <div className="body-signup">
+      <h2 className="registrate-titulo">Regístrate</h2>
+      <div>
+        <form className="signup-form">
+          <div className="signup-div">
+            <label htmlFor="username">Nombre de Usuario:</label>
+            <input
+              type="text"
+              id="username"
+              name="username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+            />
+          </div>
+          <div className="signup-div">
+            <label htmlFor="email">Email:</label>
+            <input
+              type="text"
+              id="email"
+              name="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+            />
+          </div>
+          <div className="signup-div">
+            <label htmlFor="password">Contraseña:</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+            />
+          </div>
+          <div className="signup-div">
+            <label htmlFor="repeatPassword">Repetir contraseña:</label>
+            <input
+              type="password"
+              id="repeatPassword"
+              name="repeatPassword"
+              value={repeatPassword}
+              onChange={(e) => setRepeatPassword(e.target.value)}
+            />
+          </div>
+          <div>{errorMessage !== "" && <h2>{errorMessage}</h2>}</div>
+          <button className="btn" onClick={handleSubmit}>
+            Registrarse
+          </button>
+        </form>
+        <p className="link-acceso-signup">
+          ¿Registrado? <Link to="/acceso">Accede</Link>
+        </p>
+
+        <Link to="/anuncios">
+          <button className="btn">Ver anuncios</button>
+        </Link>
+      </div>
+    </div>
   );
 }
 

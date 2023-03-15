@@ -6,7 +6,7 @@
     --verde-claro: rgb(208, 227, 12)
 }
 
-.body {
+.body-home {
     background-color: var(--amarillo);
     min-height: 100vh;
     padding: 0;
@@ -58,10 +58,11 @@
 
 .footer {
     color: var(--gris);
+    margin: 0;
 }
 
 @media (min-width: 768px) {
-    .body {
+    .body-home {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -69,6 +70,7 @@
 
     .video-home {
         width: 40vw;
+        padding: 0;
     }
 
     .eslogan-text {
@@ -81,7 +83,7 @@
     }
 
     .btn {
-        max-width: 15vw;
+        width: 20vw;
 
     }
 }
