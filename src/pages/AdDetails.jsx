@@ -8,6 +8,7 @@ import { adDetailsService, deleteAdService } from "../services/ad.services";
 import { useContext } from "react";
 import { authContext } from "../context/auth.context";
 import IsAdFavourite from "../components/IsAdFavourite";
+import "./AdDetails.css";
 
 function AdDetails() {
   const navigate = useNavigate();
@@ -46,10 +47,8 @@ function AdDetails() {
     }
   };
   return (
-    <>
+    <div className="adDetails-body">
       <Navbar />
-
-      <GoBack />
 
       {!ad ? (
         <>
@@ -59,13 +58,17 @@ function AdDetails() {
       ) : (
         <>
           <div>
-            <h3>{ad.title}</h3>
-            <div>
-              <p>{ad.owner.username}</p>
-              <p>{ad.owner.location}</p>
+            <div className="adDetails-title-container">
+              <GoBack />
+              <h3>{ad.title[0].toUpperCase() + ad.title.slice(1)}</h3>
+              <div className="divStyle"></div>
+            </div>
+            <div className="ad-owner-data">
+              <p className="ad-owner">{ad.owner.username}</p>
+              <p className="adOwner-location">{ad.owner.location}</p>
             </div>
             <Carousel adImages={ad.adImages} />
-            <p>
+            <p className="ad-description">
               <span>Descripción: </span>
               {ad.description}
             </p>
@@ -74,24 +77,26 @@ function AdDetails() {
           {isOwner ? (
             <>
               <Link to={`/anuncios/${idProducto}/editar`}>
-                <button>Editar</button>
+                <button className="btn btn-editarAd">Editar</button>
               </Link>
-              <button onClick={deleteAd}>Eliminar</button>
+              <button className="btn btn-borrarAd" onClick={deleteAd}>
+                Eliminar
+              </button>
             </>
           ) : (
-            <>
+            <div className="fav-msg-buttons">
               <IsAdFavourite
                 idProducto={idProducto}
                 userFavs={userFavs.favouritesAds}
               />
               <Link to={`/mensajes/${ad.owner._id}`}>
-                <button>Mensaje</button>
+                <button className="btn-mensaje">Mensaje</button>
               </Link>
-            </>
+            </div>
           )}
         </>
       )}
-    </>
+    </div>
   );
 }
 

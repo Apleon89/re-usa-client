@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import notFavHeart from "../assets/images/heart-outline.png";
 import favHeart from "../assets/images/heart-red.png";
 import { addRemoveFavService } from "../services/ad.services";
+import './IsAdFavourite.css'
 
 function IsAdFavourite(props) {
   const { idProducto, userFavs } = props;
@@ -42,11 +43,11 @@ function IsAdFavourite(props) {
   return (
     <>
       {isFavourite ? (
-        <button onClick={removeFav}>
+        <button className="btn btn-favAd" onClick={removeFav}>
           <img src={favHeart} alt="" width="20px" />
         </button>
       ) : (
-        <button onClick={addFav}>
+        <button className="btn btn-favAd" onClick={addFav}>
           <img src={notFavHeart} alt="" width="20px" />
         </button>
       )}

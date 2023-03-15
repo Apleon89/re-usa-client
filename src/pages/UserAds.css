@@ -13,6 +13,10 @@
     
 }
 
+.divStyle {
+    width: 10vw;
+}
+
 .userAds-title-container h3 {
     color: var(--gris-oscuro);
 }

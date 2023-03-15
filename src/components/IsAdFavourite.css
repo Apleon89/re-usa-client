@@ -1,0 +1,10 @@
+.btn-favAd {
+    padding: 0.6vh 4vw;
+    margin: 0 1.5vw;
+}
+
+@media (min-width: 768px) {
+    .btn-favAd {
+        max-width: 10vw;
+    }
+}

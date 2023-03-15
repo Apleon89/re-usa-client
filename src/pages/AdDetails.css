@@ -1,0 +1,66 @@
+.adDetails-body {
+    padding-bottom: 7vh;
+    background-color: var(--amarillo-claro);
+    min-height: 100vh;
+}
+
+.adDetails-title-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--amarillo);
+    height: 7vh;
+}
+
+.adDetails-title-container h3 {
+    color: var(--gris-oscuro);
+}
+
+.ad-owner-data p {
+    color: var(--gris-oscuro);
+}
+
+.ad-owner {
+    font-size: 1.2rem;
+    margin: 0;
+}
+
+.adOwner-location {
+    font-size: 1rem;
+}
+
+.ad-description {
+    max-width: 90vw;
+    margin: 0 auto;
+}
+
+.btn-editarAd,
+.btn-borrarAd {
+    margin: 0 1.5vw 2vh 1.5vw;
+}
+
+.btn-mensaje {
+    padding: 1vh 3vw;
+    border-radius: 10px;
+    border: 1px solid var(--gris);
+    background-color: whitesmoke;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    color: rgb(86, 86, 86);
+    transition: transform 0.3s ease-out;
+}
+
+.fav-msg-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .adDetails-title-container {
+        padding-top: 7vh;
+    }
+    .ad-description {
+        max-width: 75vw;
+    }
+}

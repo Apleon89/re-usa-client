@@ -1,0 +1,40 @@
+.carousel-img-container {
+    width: 100vw;
+    height: 40vh;
+    margin-bottom: 2vh;
+}
+
+.carousel-img-container img {
+    max-width: 90%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.carousel-btn button {
+    margin-bottom: 4vh;
+    padding: 1vh 4vw;
+    border-radius: 10px;
+    border: 1px solid var(--gris);
+    background-color: whitesmoke;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    color: rgb(86, 86, 86);
+    transition: transform 0.3s ease-out;
+    margin: 0 3vw 3vh 3vw;
+}
+
+.carousel-btn button:hover {
+    transform: translateY(-2px) translateZ(0) scale(1.05);
+}
+
+@media (min-width: 768px) {
+    .carousel-img-container {
+        width: 50vw;
+        margin: 0 auto;
+    }
+
+    .carousel-btn button {
+        margin-top: 2vh;
+    }
+}
