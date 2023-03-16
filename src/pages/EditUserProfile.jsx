@@ -10,6 +10,7 @@ import { useContext } from "react";
 import { authContext } from "../context/auth.context";
 import { uploadImageService } from "../services/upload.services";
 import { PropagateLoader } from "react-spinners";
+import "./EditUserProfile.css";
 
 function EditUserProfile() {
   const { loggedUser } = useContext(authContext);
@@ -73,50 +74,60 @@ function EditUserProfile() {
     }
   };
   return (
-    <>
+    <div className="editProfile-body">
       <Navbar />
-      <GoBack />
-      <div>
+      <div className="editProfile-title-container">
+        <GoBack />
+        <h3>Editar Perfil</h3>
+        <div className="divStyle"></div>
+      </div>
+      <div className="editProfile-container">
         {imageUrl && (
-          <div>
+          <div className="editProfile-imgContainer">
             <img src={imageUrl} alt="img" width={200} />
           </div>
         )}
         {isUploading && <PropagateLoader />}
-        <label>Imagen de perfil:</label>
+        <div className="uploadImg-container">
+        <label htmlFor="image">Cambiar imagen</label>
         <input
           type="file"
           name="image"
+          id="image"
+          className="inputfile"
           onChange={handleFileUpload}
           disabled={isUploading}
         />
+        </div>
       </div>
-      <form>
-        <label htmlFor="username">Nombre Usuario:</label>
-        <input
-          type="text"
-          name="username"
-          id="username"
-          value={username}
-          onChange={(e) => setUsername(e.target.value)}
-        />
-        <br />
-        <label htmlFor="location">Localización:</label>
-        <input
-          type="text"
-          name="location"
-          id="location"
-          value={location}
-          onChange={(e) => setLocation(e.target.value)}
-        />
-        <br />
+      <form className="editProfile-form">
+        <div className="editProfile-div">
+          <label htmlFor="username">Nombre Usuario:</label>
+          <input
+            type="text"
+            name="username"
+            id="username"
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+          />
+        </div>
+        <div className="editProfile-div">
+          <label htmlFor="location">Localización:</label>
+          <input
+            type="text"
+            name="location"
+            id="location"
+            value={location}
+            onChange={(e) => setLocation(e.target.value)}
+          />
+        </div>
         <div>{errorMessage !== "" && <h2>{errorMessage}</h2>}</div>
-        <button onClick={editProfile}>Editar</button>
+        <button className="btn" onClick={editProfile}>Editar</button>
       </form>
       <Link to={`/perfil/${loggedUser._id}/borrarCuenta`}>
-        <button>Borrar cuenta</button>
+        <button className="btn">Borrar cuenta</button>
       </Link>
-    </>
+    </div>
   );
 }
 

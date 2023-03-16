@@ -33,7 +33,7 @@
     justify-content: space-between;
     margin-bottom: 2vh;
     align-items: start;
-    width: 98%;
+    width: 100%;
 }
 
 .signup-div label {
@@ -41,7 +41,7 @@
 }
 
 .signup-div input {
-    width: 100%;
+    width: 98%;
     border-radius: 5px;
     border: 1px solid var(--gris);
     height: 4vh;

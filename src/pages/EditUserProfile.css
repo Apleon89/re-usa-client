@@ -1,0 +1,113 @@
+.editProfile-body {
+    min-height: 100vh;
+    background-color: var(--amarillo-claro);
+    color: var(--gris-oscuro);
+}
+
+.editProfile-title-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--amarillo);
+    height: 7vh;
+    position: fixed;
+    width: 100%;
+    color: var(--gris-oscuro);
+}
+
+.divStyle {
+    width: 10vw;
+}
+
+.editProfile-container {
+    padding-top: 10vh;
+}
+
+.editProfile-imgContainer {
+    width: 40vw;
+    max-width: 250px;
+    height: 40vw;
+    max-height: 250px;
+    margin: 2vh auto;
+}
+
+.editProfile-imgContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid var(--gris);
+}
+
+.editProfile-form,
+.uploadImg-container {
+    width: 80vw;
+    padding: 2vh;
+    margin: 0 auto;
+}
+
+.editProfile-form button {
+    margin-top: 2vh;
+}
+
+.editProfile-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 2vh;
+    align-items: start;
+    width: 100%;
+}
+
+.editProfile-div input {
+    width: 98%;
+    border-radius: 5px;
+    border: 1px solid var(--gris);
+    height: 4vh;
+    background-color: whitesmoke;
+}
+
+.editProfile-div input:focus {
+    outline: none;
+}
+
+.inputfile {
+    width: 0.1px;
+	height: 0.1px;
+	opacity: 0;
+	overflow: hidden;
+	position: absolute;
+	z-index: -1;
+} 
+
+.uploadImg-container label {
+    padding: 0.5vh 1.5vw;
+    border-radius: 10px;
+    border: 1px solid var(--gris);
+    background-color: whitesmoke;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    color: rgb(86, 86, 86);
+    transition: transform 0.3s ease-out;
+    display: inline-block;
+
+}
+
+.uploadImg-container label:hover {
+    transform: translateY(-2px) translateZ(0) scale(1.05);
+}
+
+@media (min-width: 768px) {
+    .editProfile-title-container {
+        margin-top: 7vh;
+    }
+
+    .editProfile-container {
+        padding-top: 14vh;
+    }
+
+    .editProfile-form {
+        width: 50vw;
+    }
+
+}
