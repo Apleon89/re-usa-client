@@ -30,7 +30,5 @@ p {
   align-items: center;
   gap: 2vh;
   height: 100vh;
-  
   color: var(--gris-oscuro);
-  background-color: var(--amarillo-claro);
 }
