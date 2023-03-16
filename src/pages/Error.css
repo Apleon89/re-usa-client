@@ -1,0 +1,13 @@
+.error-div {
+    background-color: var(--amarillo-claro);
+    min-height: 100vh;
+}
+
+.error-div h3 {
+    margin: 0 5vw;
+}
+
+.error {
+    padding-top: 10vh;
+    color: var(--gris-oscuro);
+}
