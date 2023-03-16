@@ -5,7 +5,7 @@ import Navbar from "../components/Navbar";
 import OneElement from "../components/OneElement";
 import SearchBar from "../components/SearchBar";
 import { allAdsService } from "../services/ad.services";
-import './AllAds.css'
+import "./AllAds.css";
 
 function AllAds() {
   const navigate = useNavigate();
@@ -17,7 +17,6 @@ function AllAds() {
     const getData = async () => {
       try {
         const response = await allAdsService();
-        console.log(response);
         if (categoryToSearch || valueToSearch) {
           const filteredAds = response.data
             .filter((each) => {
@@ -33,6 +32,9 @@ function AllAds() {
                   .toLowerCase()
                   .includes(valueToSearch.toLowerCase()) ||
                 each.description
+                  .toLowerCase()
+                  .includes(valueToSearch.toLowerCase()) ||
+                each.owner.username
                   .toLowerCase()
                   .includes(valueToSearch.toLowerCase())
               );
@@ -66,15 +68,15 @@ function AllAds() {
         <h4>No hay anuncios</h4>
       ) : (
         <div className="allAds-container">
-        {allAds.map((each) => (
-          <Link to={`/anuncios/${each._id}`} key={each._id}>
-            <OneElement
-              img={each.adImages[0]}
-              title={each.title}
-              username={each.owner.username}
-            />
-          </Link>
-        ))}
+          {allAds.map((each) => (
+            <Link to={`/anuncios/${each._id}`} key={each._id}>
+              <OneElement
+                img={each.adImages[0]}
+                title={each.title}
+                username={each.owner.username}
+              />
+            </Link>
+          ))}
         </div>
       )}
     </div>

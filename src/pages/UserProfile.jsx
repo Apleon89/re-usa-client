@@ -6,6 +6,7 @@ import Navbar from "../components/Navbar";
 import { getProfileService } from "../services/profile.services";
 import { useContext } from "react";
 import { authContext } from "../context/auth.context";
+import "./UserProfile.css";
 
 function UserProfile() {
   const { validateToken, loggedUser } = useContext(authContext);
@@ -33,10 +34,14 @@ function UserProfile() {
   };
 
   return (
-    <>
+    <div className="userProfile-body">
       <Navbar />
-      <GoBack />
-      <div>
+      <div className="userProfile-title-container">
+        <GoBack />
+        <h3>Mi Perfil</h3>
+        <div className="divStyle"></div>
+      </div>
+      <div className="userProfile-container">
         {!userData ? (
           <>
             <h3>Buscando</h3>
@@ -44,30 +49,40 @@ function UserProfile() {
           </>
         ) : (
           <>
-            <img src={userData.profileImage} alt="profile img" width="100px" />
-            <h3>
-              <span>Nombre de usuario: </span>
-              {userData.username}
-            </h3>
-            <h4>
-              <span>Email: </span>
-              {userData.email}
-            </h4>
-            <h5>
-              <span>Location: </span>
-              {userData.location}
-            </h5>
-            <Link to={`/perfil/${loggedUser._id}/misAnuncios`}>
-              <button>Mis anuncios</button>
-            </Link>
-            <Link to={`/perfil/${loggedUser._id}/editar`}>
-              <button>Editar Perfil</button>
-            </Link>
-            <button onClick={handleLogout}>Cerrar sesión</button>
+            <div className="userProfile-imgContainer">
+              <img
+                src={userData.profileImage}
+                alt="profile img"
+                width="100px"
+              />
+            </div>
+            <div className="userProfile-dataContainer">
+              <div className="dataContainerDiv">
+                <span>Nombre de usuario: </span>
+                <h3>{userData.username}</h3>
+              </div>
+              <div className="dataContainerDiv">
+                <span>Email: </span>
+                <h4>{userData.email}</h4>
+              </div>
+              <div className="dataContainerDiv">
+                <span>Location: </span>
+                <h5>{userData.location}</h5>
+              </div>
+            </div>
+            <div className="userProfile-links">
+              <Link to={`/perfil/${loggedUser._id}/misAnuncios`}>
+                <button className="btn">Mis anuncios</button>
+              </Link>
+              <Link to={`/perfil/${loggedUser._id}/editar`}>
+                <button className="btn">Editar Perfil</button>
+              </Link>
+              <button className="btn" onClick={handleLogout}>Cerrar sesión</button>
+            </div>
           </>
         )}
       </div>
-    </>
+    </div>
   );
 }
 

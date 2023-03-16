@@ -1,0 +1,83 @@
+.userProfile-body {
+    min-height: 100vh;
+    background-color: var(--amarillo-claro);
+}
+
+.userProfile-title-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--amarillo);
+    height: 7vh;
+    position: fixed;
+    width: 100%;
+}
+
+.divStyle {
+    width: 10vw;
+}
+
+.userProfile-title-container h3 {
+    color: var(--gris-oscuro);
+}
+
+.userProfile-container {
+    padding-top: 7vh;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-bottom: 7vh;
+}
+
+.userProfile-imgContainer {
+    width: 50vw;
+    max-width: 300px;
+    height: 50vw;
+    max-height: 300px;
+    margin: 2vh auto;
+}
+
+.userProfile-imgContainer img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+    border: 1px solid var(--gris);
+}
+
+.userProfile-dataContainer {
+    color: var(--gris-oscuro);
+    padding-top: 2vh;
+}
+
+.dataContainerDiv {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 5vw;
+}
+
+.dataContainerDiv span {
+    color: black;
+}
+
+.userProfile-links button{
+    margin: 2vh 2vw;
+}
+
+@media (min-width: 768px) {
+    .userProfile-title-container {
+        margin-top: 7vh;
+    }
+
+    .userProfile-container {
+        padding-top: 10vh;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .userProfile-dataContainer {
+        width: 70%;
+        margin: 0 auto;
+    }
+}

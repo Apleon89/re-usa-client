@@ -43,11 +43,11 @@ function IsAdFavourite(props) {
   return (
     <>
       {isFavourite ? (
-        <button className="btn btn-favAd" onClick={removeFav}>
+        <button className="btn-favAd" onClick={removeFav}>
           <img src={favHeart} alt="" width="20px" />
         </button>
       ) : (
-        <button className="btn btn-favAd" onClick={addFav}>
+        <button className="btn-favAd" onClick={addFav}>
           <img src={notFavHeart} alt="" width="20px" />
         </button>
       )}

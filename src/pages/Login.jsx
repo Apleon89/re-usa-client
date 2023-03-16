@@ -42,7 +42,7 @@ function Login() {
           <div className="login-div">
             <label htmlFor="email">Email:</label>
             <input
-              type="text"
+              type="email"
               id="email"
               name="email"
               value={email}

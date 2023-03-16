@@ -6,7 +6,7 @@ import Navbar from "../components/Navbar";
 import OneElement from "../components/OneElement";
 import SearchBar from "../components/SearchBar";
 import { getUserAdsService } from "../services/profile.services";
-import './UserAds.css'
+import "./UserAds.css";
 
 function UserAds() {
   const params = useParams();
@@ -54,35 +54,35 @@ function UserAds() {
     <div className="userAds-body">
       <Navbar />
       <div className="userAds-title-container">
-      <GoBack />
-      <h3>Mis anuncios</h3>
-      <div className="divStyle"></div>
+        <GoBack />
+        <h3>Mis anuncios</h3>
+        <div className="divStyle"></div>
       </div>
       <div className="search-container">
-      <SearchBar
-        setCategoryToSearch={setCategoryToSearch}
-        setValueToSearch={setValueToSearch}
-      />
+        <SearchBar
+          setCategoryToSearch={setCategoryToSearch}
+          setValueToSearch={setValueToSearch}
+        />
       </div>
       <div className="userAds-container">
-      {!userAds ? (
-        <>
-          <h3>Buscando</h3>
-          <PropagateLoader />
-        </>
-      ) : (
-        <>
-          {userAds.length === 0 ? (
-            <p>No hay anuncios publicados</p>
-          ) : (
-            userAds.map((each) => (
-              <Link to={`/anuncios/${each._id}`} key={each._id}>
-                <OneElement img={each.adImages[0]} title={each.title} />
-              </Link>
-            ))
-          )}
-        </>
-      )}
+        {!userAds ? (
+          <>
+            <h3>Buscando</h3>
+            <PropagateLoader />
+          </>
+        ) : (
+          <>
+            {userAds.length === 0 ? (
+              <p>No hay anuncios publicados</p>
+            ) : (
+              userAds.map((each) => (
+                <Link to={`/anuncios/${each._id}`} key={each._id}>
+                  <OneElement img={each.adImages[0]} title={each.title} />
+                </Link>
+              ))
+            )}
+          </>
+        )}
       </div>
     </div>
   );
