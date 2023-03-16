@@ -2,6 +2,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { useContext, useState } from "react";
 import { authContext } from "../context/auth.context";
 import { deleteUserService } from "../services/profile.services";
+import './DeleteProfile.css'
 
 function DeleteProfile() {
   const navigate = useNavigate();
@@ -22,19 +23,19 @@ function DeleteProfile() {
     }
   };
   return (
-    <>
+    <div className="delete-acount-view">
       {!deletedAccount ? (
         <>
           <h2>¿Seguro que quiere eliminar su cuenta?</h2>
-          <button onClick={deleteUSerAccount}>Sí</button>
+          <button className="btn btn-delete" onClick={deleteUSerAccount}>Sí</button>
           <Link to={`/perfil/${loggedUser._id}`}>
-            <button>No</button>
+            <button className="btn btn-delete">No</button>
           </Link>
         </>
       ) : (
         <h2>Cuenta eliminada</h2>
       )}
-    </>
+    </div>
   );
 }
 

@@ -4,6 +4,7 @@ import {
   deleteOneMessageService,
   updateOneMessageService,
 } from "../services/messages.services";
+import "./EditMessages.css";
 
 function EditMessages(props) {
   const navigate = useNavigate();
@@ -34,19 +35,25 @@ function EditMessages(props) {
   };
 
   return (
-    <div>
-      <button onClick={() => setShowEdit(!showEdit)}>Editar</button>
+    <div className="edit-mssgs-div">
+      <button className="btn-editmsgs" onClick={() => setShowEdit(!showEdit)}>
+        Editar
+      </button>
       {showEdit && (
-        <div>
+        <div className="editMessage-div">
           <form>
-            <input
-              type="text"
+            <textarea
+              type=""
               value={editInput}
               onChange={(e) => setEditInput(e.target.value)}
             />
-            <button onClick={editMessage}>Editar</button>
+            <button className="btn-editmsgs" onClick={editMessage}>
+              Editar
+            </button>
+            <button className="btn-editmsgs" onClick={deleteMessage}>
+              Borrar
+            </button>
           </form>
-          <button onClick={deleteMessage}>Borrar</button>
         </div>
       )}
     </div>

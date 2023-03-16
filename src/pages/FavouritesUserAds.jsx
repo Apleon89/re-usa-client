@@ -65,10 +65,10 @@ function FavouritesUserAds() {
       </div>
       <div className="favAds-container">
         {!favouritesAds ? (
-          <>
+          <div className="loopSearch">
             <h3>Buscando</h3>
             <PropagateLoader />
-          </>
+          </div>
         ) : favouritesAds.length === 0 ? (
           <h4>No hay anuncios favoritos.</h4>
         ) : (

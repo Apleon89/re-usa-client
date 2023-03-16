@@ -8,6 +8,7 @@ import {
 } from "../services/messages.services";
 import { PropagateLoader } from "react-spinners";
 import EditMessages from "../components/EditMessages";
+import "./ChatView.css";
 
 function ChatView() {
   const navigate = useNavigate();
@@ -52,9 +53,9 @@ function ChatView() {
   };
 
   return (
-    <>
+    <div className="viewchat-body">
       <Navbar />
-      <div>
+      <div className="viewChat-title-container">
         <GoBack />
         {!userB ? (
           <h2>...Buscando</h2>
@@ -63,58 +64,65 @@ function ChatView() {
         ) : (
           <h2>{userB.username}</h2>
         )}
+        <div className="divStyle"></div>
       </div>
-      <div>
+      <div className="viewChat-container">
         {!chat ? (
-          <>
+          <div className="loopSearch">
             <h3>Buscando</h3>
             <PropagateLoader />
-          </>
+          </div>
         ) : (
           chat.map((each) => {
             if (each.transmitter._id === userB._id) {
               return (
-                <div key={each._id}>
-                  <div>
+                <div key={each._id} className="userB-chat">
+                  <div className="userB-text-container">
+                    <div className="userB-username-div">
+                      {each.transmitter.username.slice(0, 17) ===
+                      "Usuario Eliminado" ? (
+                        <h4>Usuario Eliminado</h4>
+                      ) : (
+                        <h4>{each.transmitter.username}</h4>
+                      )}
+                      <p>
+                        {new Date(each.updatedAt).toLocaleDateString()}{" "}
+                        {each.updatedAt.slice(11, 16)}
+                      </p>
+                    </div>
+                    <p className="userB-message">{each.message}</p>
+                  </div>
+                  <div className="userB-img">
                     <img
                       src={each.transmitter.profileImage}
                       alt="user profile"
                       width="200px"
                     />
-                  </div>
-                  <div>
-                    {each.transmitter.username.slice(0, 17) ===
-                    "Usuario Eliminado" ? (
-                      <h4>Usuario Eliminado</h4>
-                    ) : (
-                      <h4>{each.transmitter.username}</h4>
-                    )}
-                    <p>
-                      {new Date(each.updatedAt).toLocaleDateString()}{" "}
-                      {each.updatedAt.slice(11, 16)}
-                    </p>
-                    <p>{each.message}</p>
                   </div>
                 </div>
               );
             } else {
               return (
-                <div key={each._id}>
-                  <div>
-                    <h4>{each.transmitter.username}</h4>
-                    <p>
-                      {new Date(each.updatedAt).toLocaleDateString()}{" "}
-                      {each.updatedAt.slice(11, 16)}
-                    </p>
-                    <p>{each.message}</p>
-                    <EditMessages message={each} getData={getData} />
-                  </div>
-                  <div>
+                <div key={each._id} className="userA-chat">
+                  <div className="userA-img">
                     <img
                       src={each.transmitter.profileImage}
                       alt="user profile"
                       width="200px"
                     />
+                  </div>
+                  <div className="userA-text-container">
+                    <div className="userA-username-div">
+                      <h4>{each.transmitter.username}</h4>
+                      <p>
+                        {new Date(each.updatedAt).toLocaleDateString()}{" "}
+                        {each.updatedAt.slice(11, 16)}
+                      </p>
+                    </div>
+                    <div className="userA-message-div">
+                      <p>{each.message}</p>
+                      <EditMessages message={each} getData={getData} />
+                    </div>
                   </div>
                 </div>
               );
@@ -122,8 +130,8 @@ function ChatView() {
           })
         )}
       </div>
-      <div>
-        <form>
+      <div className="chat-form-div">
+        <form className="chat-form">
           <textarea
             name="message"
             id="message"
@@ -132,10 +140,12 @@ function ChatView() {
             value={newMessage}
             onChange={(e) => setNewMessage(e.target.value)}
           ></textarea>
-          <button onClick={sendMessage}>Enviar</button>
+          <button className="btn" onClick={sendMessage}>
+            Enviar
+          </button>
         </form>
       </div>
-    </>
+    </div>
   );
 }
 

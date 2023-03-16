@@ -60,10 +60,10 @@ function AllAds() {
       />
 
       {!allAds ? (
-        <>
+        <div className="loopSearch">
           <h3>Buscando</h3>
           <PropagateLoader />
-        </>
+        </div>
       ) : allAds.length === 0 ? (
         <h4>No hay anuncios</h4>
       ) : (

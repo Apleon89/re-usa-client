@@ -66,10 +66,10 @@ function UserAds() {
       </div>
       <div className="userAds-container">
         {!userAds ? (
-          <>
+          <div className="loopSearch">
             <h3>Buscando</h3>
             <PropagateLoader />
-          </>
+          </div>
         ) : (
           <>
             {userAds.length === 0 ? (

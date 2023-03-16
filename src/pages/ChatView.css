@@ -1,0 +1,143 @@
+.viewchat-body {
+    min-height: 100vh;
+}
+
+.viewchat-body h4,
+.viewchat-body p {
+    margin: 0;
+}
+
+.viewChat-title-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--amarillo);
+    height: 7vh;
+    position: fixed;
+    width: 100vw;
+    top: 0;
+}
+
+.chat-form-div {
+    width: 100vw;
+}
+
+.chat-form {
+    position: fixed;
+    bottom: 7vh;
+    margin: 0 auto;
+    padding: 1vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    background-color: var(--amarillo);
+    gap: 2vw;
+}
+
+.chat-form textarea {
+    width: 70vw;
+    background-color: whitesmoke;
+    border-radius: 10px;
+}
+
+.chat-form button {
+    margin: 0;
+}
+
+.viewChat-container {
+    padding-top: 7vh;
+    padding-bottom: 20vh;
+}
+
+.userB-chat {
+    display: flex;
+    justify-content: space-between;
+    border: 0.5px solid var(--gris);
+    border-radius: 10px;
+    padding: 1vh;
+    margin: 1vh 0;
+    background-color: var(--amarillo-claro);
+}
+
+.userA-chat {
+    display: flex;
+    justify-content: space-between;
+    border: 0.5px solid var(--gris);
+    border-radius: 10px;
+    padding: 1vh;
+    margin: 1vh 0;
+    background-color: var(--amarillo-claro);
+}
+
+.userA-img,
+.userB-img {
+    width: 10vw;
+    height: 10vw;
+    padding: 0 0.5vw;
+}
+
+.userA-img img,
+.userB-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 35px;
+}
+
+
+.userA-username-div,
+.userB-username-div {
+    display: flex;
+    align-items: center;
+    gap: 1vw;
+    justify-content: space-between;
+    padding-bottom: 0.5vh;
+}
+
+.userA-username-div p,
+.userB-username-div p {
+    color: var(--gris);
+}
+
+.userA-message-div {
+    display: flex;
+    justify-content: space-between;
+    
+}
+
+.userA-message-div p {
+    color: var(--gris-oscuro);
+    padding-right: 2vw;
+    max-width: 80vw;
+}
+
+
+.userB-message {
+    text-align: start;
+}
+
+@media (min-width: 768px) {
+    .viewChat-title-container {
+        margin-top: 7vh;
+    }
+
+    .viewchat-body {
+        padding-top: 7vh;
+    }
+
+    .chat-form  {
+        bottom: 0;
+    }
+
+    .chat-form textarea {
+        width: 50vw;
+    }
+
+    .viewChat-container {
+        max-width: 50vw;
+        margin: 0 auto;
+    }
+
+    
+}

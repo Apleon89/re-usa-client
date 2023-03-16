@@ -1,0 +1,10 @@
+.delete-acount-view {
+    height: 100vh;
+    padding: 20vh 5vw;
+    background-color: var(--amarillo-claro);
+    color: var(--gris-oscuro);
+}
+
+.btn-delete {
+    margin: 0 2vw;
+}

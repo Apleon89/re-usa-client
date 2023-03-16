@@ -51,10 +51,10 @@ function AdDetails() {
       <Navbar />
 
       {!ad ? (
-        <>
+        <div className="loopSearch">
           <h3>Buscando</h3>
           <PropagateLoader />
-        </>
+        </div>
       ) : (
         <>
           <div>

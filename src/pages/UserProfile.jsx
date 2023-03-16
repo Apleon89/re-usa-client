@@ -43,10 +43,10 @@ function UserProfile() {
       </div>
       <div className="userProfile-container">
         {!userData ? (
-          <>
+          <div className="loopSearch">
             <h3>Buscando</h3>
             <PropagateLoader />
-          </>
+          </div>
         ) : (
           <>
             <div className="userProfile-imgContainer">

@@ -63,7 +63,7 @@ function NewAd() {
       <Navbar />
       <div className="newAd-title-container">
         <GoBack />
-        <h2>Añadir anuncio</h2>
+        <h3>Añadir anuncio</h3>
         <div className="divStyle"></div>
       </div>
       <div className="newAd-container">

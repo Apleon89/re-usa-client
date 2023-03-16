@@ -22,3 +22,15 @@ a {
 p {
   color: var(--gris-oscuro);
 }
+
+.loopSearch {
+  display: flex;
+  flex-direction: column;
+  padding-top: 20vh;
+  align-items: center;
+  gap: 2vh;
+  height: 100vh;
+  
+  color: var(--gris-oscuro);
+  background-color: var(--amarillo-claro);
+}

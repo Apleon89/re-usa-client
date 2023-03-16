@@ -57,10 +57,10 @@ function AllMessages() {
       </div>
       <div className="allmsgs-container">
       {!allChats ? (
-        <>
+        <div className="loopSearch">
           <h3>Buscando</h3>
           <PropagateLoader />
-        </>
+        </div>
       ) : allChats.length === 0 ? (
         <h2>No hay chats</h2>
       ) : (
