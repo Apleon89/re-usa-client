@@ -17,6 +17,7 @@ function AllAds() {
     const getData = async () => {
       try {
         const response = await allAdsService();
+        console.log(response);
         if (categoryToSearch || valueToSearch) {
           const filteredAds = response.data
             .filter((each) => {
