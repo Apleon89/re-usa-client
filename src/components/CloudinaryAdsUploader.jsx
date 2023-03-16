@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { PropagateLoader } from "react-spinners";
 import { uploadImageService } from "../services/upload.services";
-import './CloudinaryAdsUploader.css'
+import "./CloudinaryAdsUploader.css";
 
 function CloudinaryAdsUploader(props) {
   const navigate = useNavigate();
@@ -126,7 +126,7 @@ function CloudinaryAdsUploader(props) {
       </div>
       <div className="selectImg-container">
         {isUploading1 && <PropagateLoader />}
-        <label htmlFor="image1Edit">Imagen  1</label>
+        <label htmlFor="image1Edit">Imagen 1</label>
         <input
           type="file"
           name="image"
