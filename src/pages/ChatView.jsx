@@ -68,7 +68,7 @@ function ChatView() {
         <div className="divStyle"></div>
       </div>
       <div className="viewChat-container">
-        {chat ? (
+        {!chat ? (
           <div className="loopSearch">
             <h3>Buscando</h3>
             <PropagateLoader />
