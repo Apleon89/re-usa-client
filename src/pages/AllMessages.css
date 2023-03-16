@@ -1,0 +1,54 @@
+.allmsgs-title-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--amarillo);
+    height: 7vh;
+    position: fixed;
+    width: 100%;
+}
+
+.allmsgs-title-container {
+    color: var(--gris-oscuro);
+}
+
+.allmsgs-container {
+    padding-top: 7vh;
+}
+
+.edit-btn,
+.deleteChat-btn {
+    padding: 0.5vh 1.5vw;
+    border-radius: 10px;
+    border: 1px solid var(--gris);
+    background-color: whitesmoke;
+    font-size: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    color: rgb(86, 86, 86);
+    transition: transform 0.3s ease-out;
+}
+
+.deleteChat-btn {
+    margin: 0.5vh 0 2vh 0;
+}
+
+.edit-btn:hover,
+.deleteChat-btn:hover {
+    transform: translateY(-2px) translateZ(0) scale(1.05);
+}
+
+@media (min-width: 768px) {
+    .allmsgs-title-container {
+        margin-top: 7vh;
+    }
+
+    .allmsgs-container {
+        padding-top: 16vh;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 5vw;
+
+    }
+
+}

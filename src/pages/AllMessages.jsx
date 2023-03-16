@@ -8,6 +8,7 @@ import OneElement from "../components/OneElement";
 import { Link, useNavigate } from "react-router-dom";
 import { PropagateLoader } from "react-spinners";
 import GoBack from "../components/GoBack";
+import "./AllMessages.css";
 
 function AllMessages() {
   const navigate = useNavigate();
@@ -47,11 +48,14 @@ function AllMessages() {
   };
 
   return (
-    <>
+    <div className="allmsgs-body">
       <Navbar />
-      <GoBack />
-      <h3>Mensajes</h3>
-      <button onClick={showDeleteButton}>Editar</button>
+      <div className="allmsgs-title-container">
+        <GoBack />
+        <h3>Mensajes</h3>
+        <button className="edit-btn" onClick={showDeleteButton}>Editar</button>
+      </div>
+      <div className="allmsgs-container">
       {!allChats ? (
         <>
           <h3>Buscando</h3>
@@ -74,14 +78,15 @@ function AllMessages() {
               )}
             </Link>
             {deleteButton && (
-              <button onClick={() => deleteAllMsgsOneUser(each.id)}>
+              <button className="deleteChat-btn" onClick={() => deleteAllMsgsOneUser(each.id)}>
                 Borrar
               </button>
             )}
           </div>
         ))
       )}
-    </>
+      </div>
+    </div>
   );
 }
 
