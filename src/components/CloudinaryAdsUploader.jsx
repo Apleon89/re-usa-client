@@ -126,7 +126,7 @@ function CloudinaryAdsUploader(props) {
       </div>
       <div className="selectImg-container">
         {isUploading1 && <PropagateLoader />}
-        <label htmlFor="image1Edit">Cambiar Imagen  1</label>
+        <label htmlFor="image1Edit">Imagen  1</label>
         <input
           type="file"
           name="image"
@@ -137,7 +137,7 @@ function CloudinaryAdsUploader(props) {
         />
         <br />
         {isUploading2 && <PropagateLoader />}
-        <label htmlFor="image2Edit">Cambiar Imagen 2</label>
+        <label htmlFor="image2Edit">Imagen 2</label>
         <input
           type="file"
           name="image"
@@ -148,7 +148,7 @@ function CloudinaryAdsUploader(props) {
         />
         <br />
         {isUploading3 && <PropagateLoader />}
-        <label htmlFor="image3Edit">Cambiar Imagen 3</label>
+        <label htmlFor="image3Edit">Imagen 3</label>
         <input
           type="file"
           name="image"
@@ -159,7 +159,7 @@ function CloudinaryAdsUploader(props) {
         />
         <br />
         {isUploading4 && <PropagateLoader />}
-        <label htmlFor="image4Edit">Cambiar Imagen 4</label>
+        <label htmlFor="image4Edit">Imagen 4</label>
         <input
           type="file"
           name="image"
