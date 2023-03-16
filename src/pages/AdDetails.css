@@ -10,10 +10,16 @@
     align-items: center;
     background-color: var(--amarillo);
     height: 7vh;
+    position: fixed;
+    width: 100vw;
 }
 
 .adDetails-title-container h3 {
     color: var(--gris-oscuro);
+}
+
+.ad-owner-data {
+    padding-top: 7vh;
 }
 
 .ad-owner-data p {
@@ -58,8 +64,13 @@
 
 @media (min-width: 768px) {
     .adDetails-title-container {
-        padding-top: 7vh;
+        margin-top: 7vh;
     }
+
+    .ad-owner-data {
+        padding-top: 14vh;
+    }
+
     .ad-description {
         max-width: 75vw;
     }
