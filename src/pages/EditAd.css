@@ -1,0 +1,67 @@
+.editAd-body {
+    min-height: 100vh;
+    background-color: var(--amarillo-claro);
+    color: var(--gris-oscuro);
+    padding-bottom: 7vh;
+}
+
+.editAd-title-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--amarillo);
+    height: 7vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    color: var(--gris-oscuro);
+}
+
+.editAd-container {
+    padding-top: 7vh;
+}
+
+.editAd-title-container h3 {
+    margin: 0;
+}
+
+.editAd-form {
+    width: 80vw;
+    padding: 2vh;
+    margin: 0 auto;
+}
+
+.editAd-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 2vh;
+    align-items: start;
+    width: 100%;
+}
+
+.editAd-div input,
+.editAd-div select,
+.editAd-div textarea {
+    width: 98%;
+    border-radius: 5px;
+    border: 1px solid var(--gris);
+    height: 4vh;
+    background-color: whitesmoke;
+}
+
+.editAd-div textarea {
+    height: 15vh;
+}
+
+@media (min-width: 768px) {
+    .editAd-title-container {
+        margin-top: 7vh;
+    }
+    
+    .editAd-container {
+        padding-top: 14vh;
+    }
+
+
+}

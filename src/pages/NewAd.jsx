@@ -6,6 +6,7 @@ import { authContext } from "../context/auth.context";
 import { newAdService } from "../services/ad.services";
 import { useNavigate } from "react-router-dom";
 import CloudinaryAdsUploader from "../components/CloudinaryAdsUploader";
+import "./NewAd.css";
 
 function NewAd() {
   const navigate = useNavigate();
@@ -58,57 +59,71 @@ function NewAd() {
   };
 
   return (
-    <>
+    <div className="newAd-body">
       <Navbar />
-      <GoBack />
-      <h2>Añadir anuncio</h2>
-      <CloudinaryAdsUploader
-        setImage1={setImage1}
-        setImage2={setImage2}
-        setImage3={setImage3}
-        setImage4={setImage4}
-      />
-      <form>
-        <label htmlFor="title">Nombre Producto:</label>
-        <input
-          type="text"
-          name="title"
-          id="title"
-          value={title}
-          onChange={(e) => setTitle(e.target.value)}
-        />
-        <br />
-        <label htmlFor="title">Categoría:</label>
-        <select
-          name="category"
-          id="category"
-          value={category}
-          onChange={(e) => setCategory(e.target.value)}
-        >
-          <option value="">Seleccionar categoría</option>
-          <option value="Videojuegos">Videojuegos</option>
-          <option value="Telefonía">Telefonía</option>
-          <option value="Informática">Informática</option>
-          <option value="Imagen y Sonido">Imagen y Sonido</option>
-          <option value="Productos del hogar">Productos del hogar</option>
-          <option value="Deportes">Deportes</option>
-          <option value="Motor">Motor</option>
-          <option value="Libros">Libros</option>
-        </select>
-        <br />
-        <label htmlFor="description">Descripción:</label>
-        <textarea
-          type="text"
-          name="description"
-          id="description"
-          value={description}
-          onChange={(e) => setDescription(e.target.value)}
-        />
-        <br />
-        <p>{errorMessage}</p>
-        <button onClick={submitNewAd}>Crear Anuncio</button>
-      </form>
-    </>
+      <div className="newAd-title-container">
+        <GoBack />
+        <h2>Añadir anuncio</h2>
+        <div className="divStyle"></div>
+      </div>
+      <div className="newAd-container">
+        <div>
+          <CloudinaryAdsUploader
+            setImage1={setImage1}
+            setImage2={setImage2}
+            setImage3={setImage3}
+            setImage4={setImage4}
+          />
+        </div>
+        <form className="newAd-form">
+          <div className="newAd-div">
+            <label htmlFor="title">Nombre Producto:</label>
+            <input
+              type="text"
+              name="title"
+              id="title"
+              value={title}
+              onChange={(e) => setTitle(e.target.value)}
+            />
+          </div>
+          <div className="newAd-div">
+            <label htmlFor="title">Categoría:</label>
+            <select
+              name="category"
+              id="category"
+              value={category}
+              onChange={(e) => setCategory(e.target.value)}
+            >
+              <option value="">Seleccionar categoría</option>
+              <option value="Videojuegos">Videojuegos</option>
+              <option value="Telefonía">Telefonía</option>
+              <option value="Informática">Informática</option>
+              <option value="Imagen y Sonido">Imagen y Sonido</option>
+              <option value="Productos del hogar">Productos del hogar</option>
+              <option value="Deportes">Deportes</option>
+              <option value="Motor">Motor</option>
+              <option value="Libros">Libros</option>
+            </select>
+          </div>
+          <div className="newAd-div">
+            <label htmlFor="description">Descripción:</label>
+            <textarea
+              type="text"
+              name="description"
+              id="description"
+              value={description}
+              onChange={(e) => setDescription(e.target.value)}
+            />
+          </div>
+          <div>
+            <p>{errorMessage}</p>
+          </div>
+          <button className="btn" onClick={submitNewAd}>
+            Crear Anuncio
+          </button>
+        </form>
+      </div>
+    </div>
   );
 }
 

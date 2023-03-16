@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { PropagateLoader } from "react-spinners";
 import { uploadImageService } from "../services/upload.services";
+import './CloudinaryAdsUploader.css'
 
 function CloudinaryAdsUploader(props) {
   const navigate = useNavigate();
@@ -96,71 +97,79 @@ function CloudinaryAdsUploader(props) {
   };
 
   return (
-    <>
-      <div>
+    <div className="cloudinary-view-container">
+      <div className="cloudinary-images">
         {imageUrl1 && (
-          <div>
+          <div className="eachImg-div">
             <p>1</p>
             <img src={imageUrl1} alt="img" width={50} />
           </div>
         )}
         {imageUrl2 && (
-          <div>
+          <div className="eachImg-div">
             <p>2</p>
             <img src={imageUrl2} alt="img" width={50} />
           </div>
         )}
         {imageUrl3 && (
-          <div>
+          <div className="eachImg-div">
             <p>3</p>
             <img src={imageUrl3} alt="img" width={50} />
           </div>
         )}
         {imageUrl4 && (
-          <div>
+          <div className="eachImg-div">
             <p>4</p>
             <img src={imageUrl4} alt="img" width={50} />
           </div>
         )}
       </div>
-      <div>
+      <div className="selectImg-container">
         {isUploading1 && <PropagateLoader />}
-        <label>Imagen 1:</label>
+        <label htmlFor="image1Edit">Cambiar Imagen  1</label>
         <input
           type="file"
           name="image"
+          className="inputfile"
+          id="image1Edit"
           onChange={handleFileUpload1}
           disabled={isUploading1}
         />
         <br />
         {isUploading2 && <PropagateLoader />}
-        <label>Imagen 2:</label>
+        <label htmlFor="image2Edit">Cambiar Imagen 2</label>
         <input
           type="file"
           name="image"
+          className="inputfile"
+          id="image2Edit"
           onChange={handleFileUpload2}
           disabled={isUploading2}
         />
         <br />
         {isUploading3 && <PropagateLoader />}
-        <label>Imagen 3:</label>
+        <label htmlFor="image3Edit">Cambiar Imagen 3</label>
         <input
           type="file"
           name="image"
+          className="inputfile"
+          id="image3Edit"
           onChange={handleFileUpload3}
           disabled={isUploading3}
         />
         <br />
         {isUploading4 && <PropagateLoader />}
-        <label>Imagen 4:</label>
+        <label htmlFor="image4Edit">Cambiar Imagen 4</label>
         <input
           type="file"
           name="image"
+          className="inputfile"
+          id="image4Edit"
           onChange={handleFileUpload4}
           disabled={isUploading4}
         />
       </div>
-    </>
+    </div>
   );
 }
 
