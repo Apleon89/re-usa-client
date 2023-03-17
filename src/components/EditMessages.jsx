@@ -25,7 +25,8 @@ function EditMessages(props) {
     }
   };
 
-  const deleteMessage = async () => {
+  const deleteMessage = async (e) => {
+    e.preventDefault();
     try {
       await deleteOneMessageService(props.message._id);
       props.getData();
