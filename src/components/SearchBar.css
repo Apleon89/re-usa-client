@@ -27,7 +27,7 @@
 
 @media (min-width: 768px) {
     .searchBar-body{
-        align-items: end;
+        padding-top: 0.5rem;
     }
     .select-searchBar,
     .input-searchBar {

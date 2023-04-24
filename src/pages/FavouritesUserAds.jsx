@@ -7,6 +7,7 @@ import OneElement from "../components/OneElement";
 import SearchBar from "../components/SearchBar";
 import { favouritesUserAdsService } from "../services/ad.services";
 import "./FavouritesUserAds.css";
+import Header from "../components/Header";
 
 function FavouritesUserAds() {
   const navigate = useNavigate();
@@ -52,11 +53,7 @@ function FavouritesUserAds() {
   return (
     <div className="favAds-body">
       <Navbar />
-      <div className="favAds-title-container">
-        <GoBack />
-        <h3>Favoritos</h3>
-        <div className="divStyle"></div>
-      </div>
+      <Header name={"Favoritos"} />
       <div className="search-container">
         <SearchBar
           setCategoryToSearch={setCategoryToSearch}

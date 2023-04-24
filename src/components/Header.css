@@ -1,0 +1,17 @@
+.title-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: var(--amarillo);
+    height: 3.5rem;
+    position: fixed;
+    width: 100%;
+}
+
+.title-container h3 {
+    color: var(--gris-oscuro);
+}
+
+.divStyle {
+    width: 10vw;
+}
