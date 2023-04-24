@@ -1,11 +1,11 @@
 .allAds-container {
     display: block;
-    padding-bottom: 7vh;
+    padding-bottom: 3.5rem;
 }
 
 @media (min-width: 768px) {
     .allAds-body {
-        padding-top: 7vh;
+        padding-top: 3.5rem;
     }
 
     .allAds-container {
