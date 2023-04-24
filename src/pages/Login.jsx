@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { loginService } from "../services/auth.services";
 import { useContext } from "react";
@@ -8,11 +8,15 @@ import "./Login.css";
 function Login() {
   const navigate = useNavigate();
 
-  const { validateToken } = useContext(authContext);
+  const { validateToken, loggedUser } = useContext(authContext);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+
+  useEffect(() => {
+    loggedUser && navigate("/anuncios");
+  }, []);
 
   const handleLogin = async (e) => {
     e.preventDefault();

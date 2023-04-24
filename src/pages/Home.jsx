@@ -1,12 +1,20 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./Home.css";
 import video from "../assets/video/IMG_0021.MP4";
-import image from '../assets/images/IMG_0022.PNG'
+import image from "../assets/images/IMG_0022.PNG";
+import { useContext, useEffect } from "react";
+import { authContext } from "../context/auth.context";
 
 function Home() {
+  const { loggedUser } = useContext(authContext);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    loggedUser && navigate("/anuncios");
+  }, []);
+
   return (
     <div className="body-home">
-      {/* <h2 className="titulo">Re-Usa</h2> */}
       <video autoPlay muted loop className="video-home">
         <source src={video} type="video/mp4" />
         <img src={image} alt="logo de respaldo" />
