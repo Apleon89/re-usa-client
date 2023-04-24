@@ -14,24 +14,24 @@
 }
 
 .home-icon {
-    width: 3rem;
+    width: 2.5rem;
 }
 
 .fav-icon {
-    width: 2.3rem;
+    width: 2rem;
 }
 
 .add-icon {
-    width: 2.3rem;
+    width: 2rem;
 }
 
 .mssg-icon {
-    width: 3rem;
+    width: 2.5rem;
 }
 
 .profile-icon {
-    width: 2.3rem;
-    height: 2.3rem;
+    width: 2rem;
+    height: 2rem;
     border-radius: 20px;
     object-fit: cover;
     border: 1px solid var(--gris);
@@ -57,7 +57,7 @@
     color: var(--gris);
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
     .mobile-navBar {
         display: none;
     }
@@ -81,7 +81,7 @@
         width: 9rem;
         z-index: 999;
         position: fixed;
-        left: 8rem;
+        left: 8vw;
         top: 0;
         margin-top: 0.5rem;
     }
