@@ -37,7 +37,9 @@ function Navbar() {
         </div>
         <div className="">
           <div className="logo-container">
-            <img className="logo" src={logo} alt="logo Re-Usa" />
+            <NavLink to={"/anuncios"}>
+              <img className="logo" src={logo} alt="logo Re-Usa" />
+            </NavLink>
           </div>
           <div className="web-navBar">
             <NavLink to="/anuncios">Anuncios</NavLink>

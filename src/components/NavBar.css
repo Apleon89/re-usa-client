@@ -10,28 +10,28 @@
     justify-content: space-around;
     align-items: center;
     background-color: var(--amarillo);
-    height: 7vh;
+    height: 3.5rem;
 }
 
 .home-icon {
-    width: 8vw;
+    width: 3rem;
 }
 
 .fav-icon {
-    width: 6vw;
+    width: 2.3rem;
 }
 
 .add-icon {
-    width: 6vw;
+    width: 2.3rem;
 }
 
 .mssg-icon {
-    width: 7vw;
+    width: 3rem;
 }
 
 .profile-icon {
-    width: 6vw;
-    height: 6vw;
+    width: 2.3rem;
+    height: 2.3rem;
     border-radius: 20px;
     object-fit: cover;
     border: 1px solid var(--gris);
@@ -48,8 +48,8 @@
     position: fixed;
     top: 0;
     width: 100%;
-    gap: 3vw;
-    padding: 2vh 0;
+    gap: 2rem;
+    padding: 1rem 0;
     background-color: var(--amarillo);
 }
 
@@ -70,8 +70,8 @@
         width: 100%;
         display: flex;
         justify-content: flex-end;
-        gap: 3vw;
-        padding: 2vh;
+        gap: 2rem;
+        padding: 1rem;
         background-color: var(--amarillo);
         
     }
@@ -81,9 +81,9 @@
         width: 9rem;
         z-index: 999;
         position: fixed;
-        left: 10vw;
+        left: 8rem;
         top: 0;
-        margin-top: 1vh;
+        margin-top: 0.5rem;
     }
 
     .web-navBar a {
