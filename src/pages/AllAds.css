@@ -1,9 +1,20 @@
 .allAds-container {
     display: block;
-    padding-bottom: 3.5rem;
+    padding-bottom: 4.5rem;
 }
 
 @media (min-width: 768px) {
+
+    .allAds-container {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        padding-top: 2rem;
+    }
+}
+
+@media (min-width: 992px) {
     .allAds-body {
         padding-top: 3.5rem;
     }
@@ -12,7 +23,6 @@
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
-        gap: 5vw;
-        padding-top: 5vh;
+        gap: 5rem;
     }
 }
