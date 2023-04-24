@@ -1,16 +1,23 @@
-import React, { useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { signupService } from "../services/auth.services";
 import "./Signup.css";
+import { authContext } from "../context/auth.context";
 
 function Signup() {
   const navigate = useNavigate();
+
+  const { loggedUser } = useContext(authContext)
 
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+
+  useEffect( () => {
+    loggedUser && navigate('/anuncios')
+  }, [])
 
   const handleSubmit = async (e) => {
     e.preventDefault();
