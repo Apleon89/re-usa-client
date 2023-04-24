@@ -6,7 +6,6 @@ import image from '../assets/images/IMG_0022.PNG'
 function Home() {
   return (
     <div className="body-home">
-      {/* <h2 className="titulo">Re-Usa</h2> */}
       <video autoPlay muted loop className="video-home">
         <source src={video} type="video/mp4" />
         <img src={image} alt="logo de respaldo" />
