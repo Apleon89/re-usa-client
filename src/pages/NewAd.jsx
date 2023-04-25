@@ -1,5 +1,4 @@
 import { useState } from "react";
-import GoBack from "../components/GoBack";
 import Navbar from "../components/Navbar";
 import { useContext } from "react";
 import { authContext } from "../context/auth.context";
@@ -7,6 +6,7 @@ import { newAdService } from "../services/ad.services";
 import { useNavigate } from "react-router-dom";
 import CloudinaryAdsUploader from "../components/CloudinaryAdsUploader";
 import "./NewAd.css";
+import Header from '../components/Header'
 
 function NewAd() {
   const navigate = useNavigate();
@@ -61,11 +61,7 @@ function NewAd() {
   return (
     <div className="newAd-body">
       <Navbar />
-      <div className="newAd-title-container">
-        <GoBack />
-        <h3>Añadir anuncio</h3>
-        <div className="divStyle"></div>
-      </div>
+      <Header name={'Añadir Anuncio'}/>
       <div className="newAd-container">
         <div>
           <CloudinaryAdsUploader
