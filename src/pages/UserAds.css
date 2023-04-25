@@ -17,7 +17,8 @@
         justify-content: space-around;
         flex-wrap: wrap;
         gap: 5vw;
-        padding-top: 5vh;
+        padding: 3rem 0 5rem 0;
+
     }
 
 }
@@ -30,7 +31,7 @@
         justify-content: space-around;
         flex-wrap: wrap;
         gap: 5vw;
-        padding-top: 5vh;
+        padding: 3rem 0 5rem 0;    
     }
 
 }
