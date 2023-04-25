@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { PropagateLoader } from "react-spinners";
-import GoBack from "../components/GoBack";
+import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import OneElement from "../components/OneElement";
 import SearchBar from "../components/SearchBar";
@@ -53,11 +53,7 @@ function UserAds() {
   return (
     <div className="userAds-body">
       <Navbar />
-      <div className="userAds-title-container">
-        <GoBack />
-        <h3>Mis anuncios</h3>
-        <div className="divStyle"></div>
-      </div>
+      <Header name={'Mis anuncios'} />
       <div className="search-container">
         <SearchBar
           setCategoryToSearch={setCategoryToSearch}
