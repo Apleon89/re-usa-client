@@ -13,10 +13,23 @@
 }
 
 .divStyle {
-    width: 4rem;
+    max-width: 3.5rem;
+}
+
+@media (min-width: 768px) {
+    
+    .title-container h3 {
+        padding-left: 0rem;
+    }
+
 }
 
 @media (min-width: 992px) {
+
+    .title-container h3 {
+        padding-left: 0rem;
+    }
+
     .title-container {
         margin-top: 3.5rem;
     }
