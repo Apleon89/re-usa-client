@@ -15,3 +15,9 @@
 .divStyle {
     width: 10vw;
 }
+
+@media (min-width: 992px) {
+    .title-container {
+        margin-top: 3.5rem;
+    }
+}
