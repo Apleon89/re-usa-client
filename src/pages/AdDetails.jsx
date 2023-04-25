@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { PropagateLoader } from "react-spinners";
 import Carousel from "../components/Carousel";
-import GoBack from "../components/GoBack";
+import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import { adDetailsService, deleteAdService } from "../services/ad.services";
 import { useContext } from "react";
@@ -58,11 +58,7 @@ function AdDetails() {
       ) : (
         <>
           <div>
-            <div className="adDetails-title-container">
-              <GoBack />
-              <h3>{ad.title[0].toUpperCase() + ad.title.slice(1)}</h3>
-              <div className="divStyle"></div>
-            </div>
+            <Header name={ad.title[0].toUpperCase() + ad.title.slice(1)} />
             <div className="ad-owner-data">
               <p className="ad-owner">{ad.owner.username}</p>
               <p className="adOwner-location">{ad.owner.location}</p>

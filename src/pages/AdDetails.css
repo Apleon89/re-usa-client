@@ -1,25 +1,11 @@
 .adDetails-body {
-    padding-bottom: 7vh;
+    padding-bottom: 4rem;
     background-color: var(--amarillo-claro);
     min-height: 100vh;
 }
 
-.adDetails-title-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: var(--amarillo);
-    height: 7vh;
-    position: fixed;
-    width: 100vw;
-}
-
-.adDetails-title-container h3 {
-    color: var(--gris-oscuro);
-}
-
 .ad-owner-data {
-    padding-top: 7vh;
+    padding-top: 4rem;
 }
 
 .ad-owner-data p {
@@ -63,12 +49,20 @@
 }
 
 @media (min-width: 768px) {
-    .adDetails-title-container {
-        margin-top: 7vh;
-    }
 
     .ad-owner-data {
-        padding-top: 14vh;
+        padding-top: 5rem;
+    }
+
+    .ad-description {
+        max-width: 75vw;
+    }
+}
+
+@media (min-width: 992px) {
+
+    .ad-owner-data {
+        padding-top: 8rem;
     }
 
     .ad-description {
