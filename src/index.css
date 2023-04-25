@@ -32,3 +32,12 @@ p {
   height: 100vh;
   color: var(--gris-oscuro);
 }
+
+#credenciales {
+  height: 100vh;
+  background-color: var(--amarillo-claro);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

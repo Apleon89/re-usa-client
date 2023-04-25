@@ -36,8 +36,7 @@ function AuthWrapper(props) {
 
   if (isFetching) {
     return (
-      <div className="App">
-        <h2>...validando credenciales</h2>
+      <div className="App" id="credenciales">
         <PropagateLoader />
       </div>
     );
