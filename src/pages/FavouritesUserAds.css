@@ -1,5 +1,5 @@
 .search-container {
-    padding-top: 3rem;
+    min-height: 3rem;
 }
 
 .favAds-container {
@@ -8,7 +8,7 @@
 
 @media (min-width: 768px) {
 
-    .favAds-container{
+    .favAds-container {
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
@@ -19,15 +19,12 @@
 }
 
 @media (min-width: 992px) {
-    .favAds-body {
-        padding-top: 3.5rem;
-    }
 
-    .favAds-container{
+    .favAds-container {
         display: flex;
         justify-content: space-around;
         flex-wrap: wrap;
-        gap: 5vw;
+        gap: 2.5rem;
         padding-top: 5vh;
     }
 
