@@ -3,7 +3,7 @@
     justify-content: space-around;
     align-items: center;
     background-color: var(--amarillo);
-    height: 7vh;
+    height: 3.5rem;
     position: fixed;
     width: 100%;
 }
@@ -18,7 +18,7 @@
 
 .edit-btn,
 .deleteChat-btn {
-    padding: 0.5vh 1.5vw;
+    padding: 0.3rem 0.5rem;
     border-radius: 10px;
     border: 1px solid var(--gris);
     background-color: whitesmoke;
@@ -38,6 +38,19 @@
 }
 
 @media (min-width: 768px) {
+
+    .allmsgs-container {
+        padding-top: 16vh;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+        gap: 5vw;
+
+    }
+
+}
+
+@media (min-width: 992px) {
     .allmsgs-title-container {
         margin-top: 7vh;
     }
