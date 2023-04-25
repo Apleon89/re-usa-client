@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { PropagateLoader } from "react-spinners";
-import GoBack from "../components/GoBack";
+import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import { getProfileService } from "../services/profile.services";
 import { useContext } from "react";
@@ -36,11 +36,7 @@ function UserProfile() {
   return (
     <div className="userProfile-body">
       <Navbar />
-      <div className="userProfile-title-container">
-        <GoBack />
-        <h3>Mi Perfil</h3>
-        <div className="divStyle"></div>
-      </div>
+    <Header name={'Mi Perfil'} />
       <div className="userProfile-container">
         {!userData ? (
           <div className="loopSearch">
@@ -77,7 +73,9 @@ function UserProfile() {
               <Link to={`/perfil/${loggedUser._id}/editar`}>
                 <button className="btn">Editar Perfil</button>
               </Link>
-              <button className="btn" onClick={handleLogout}>Cerrar sesión</button>
+              <button className="btn" onClick={handleLogout}>
+                Cerrar sesión
+              </button>
             </div>
           </>
         )}

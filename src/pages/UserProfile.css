@@ -3,31 +3,13 @@
     background-color: var(--amarillo-claro);
 }
 
-.userProfile-title-container{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: var(--amarillo);
-    height: 7vh;
-    position: fixed;
-    width: 100%;
-}
-
-.divStyle {
-    width: 10vw;
-}
-
-.userProfile-title-container h3 {
-    color: var(--gris-oscuro);
-}
-
 .userProfile-container {
-    padding-top: 7vh;
-    min-height: 90vh;
+    padding-top: 4rem;
+    min-height: 70vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-bottom: 7vh;
+    padding-bottom: 4rem;
 }
 
 .userProfile-imgContainer {
@@ -66,12 +48,26 @@
 }
 
 @media (min-width: 768px) {
+
+    .userProfile-container {
+        padding-top: 5rem;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .userProfile-dataContainer {
+        width: 70%;
+        margin: 0 auto;
+    }
+}
+
+@media (min-width: 992px) {
     .userProfile-title-container {
         margin-top: 7vh;
     }
 
     .userProfile-container {
-        padding-top: 10vh;
+        padding-top: 8rem;
         width: 80%;
         margin: 0 auto;
     }
