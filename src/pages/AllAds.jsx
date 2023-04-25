@@ -53,7 +53,6 @@ function AllAds() {
   return (
     <div className="allAds-body">
       <Navbar />
-
       <SearchBar
         setCategoryToSearch={setCategoryToSearch}
         setValueToSearch={setValueToSearch}
