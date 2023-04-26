@@ -125,8 +125,9 @@ function CloudinaryAdsUploader(props) {
         )}
       </div>
       <div className="selectImg-container">
-        {isUploading1 && <PropagateLoader />}
-        <label htmlFor="image1Edit">Imagen 1</label>
+        <label htmlFor="image1Edit">
+          {isUploading1 ? "Subiendo" : "Imagen 1"}
+        </label>
         <input
           type="file"
           name="image"
@@ -136,8 +137,9 @@ function CloudinaryAdsUploader(props) {
           disabled={isUploading1}
         />
         <br />
-        {isUploading2 && <PropagateLoader />}
-        <label htmlFor="image2Edit">Imagen 2</label>
+        <label htmlFor="image2Edit">
+          {isUploading2 ? "Subiendo" : "Imagen 2"}
+        </label>
         <input
           type="file"
           name="image"
@@ -147,8 +149,9 @@ function CloudinaryAdsUploader(props) {
           disabled={isUploading2}
         />
         <br />
-        {isUploading3 && <PropagateLoader />}
-        <label htmlFor="image3Edit">Imagen 3</label>
+        <label htmlFor="image3Edit">
+          {isUploading3 ? "Subiendo" : "Imagen 3"}
+        </label>
         <input
           type="file"
           name="image"
@@ -158,8 +161,9 @@ function CloudinaryAdsUploader(props) {
           disabled={isUploading3}
         />
         <br />
-        {isUploading4 && <PropagateLoader />}
-        <label htmlFor="image4Edit">Imagen 4</label>
+        <label htmlFor="image4Edit">
+          {isUploading4 ? "Subiendo" : "Imagen 4"}
+        </label>
         <input
           type="file"
           name="image"

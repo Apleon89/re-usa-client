@@ -1,25 +1,30 @@
 .cloudinary-images {
-    padding: 0 0 3vh 0;
     display: flex;
-    justify-content: center;
-    gap: 5vw;
+    justify-content: space-around;
+    gap: 1rem;
+    width: 90vw;
+    margin: 0 auto;
 }
 
 .eachImg-div {
-    width: 15vw;
-    height: 20vw;
+    width: 5rem;
+    height: 8rem;
+}
+
+.eachImg-div p {
+    margin: 0.5rem;
 }
 
 .eachImg-div img {
     width: 100%;
-    width: 100%;
+    height: 60%;
     object-fit: cover;
     border-radius: 10px;
     border: 1px solid var(--gris);
 }
 
 .selectImg-container {
-    padding: 2vh 0;
+    padding:0 0 0.5rem 0;
     width: 90vw;
     margin: 0 auto;
     display: flex;
@@ -27,7 +32,8 @@
 }
 
 .selectImg-container label {
-    padding: 0.5vh 1.5vw;
+    padding: 0.2rem 0.2rem;
+    width: 4.8rem;
     border-radius: 10px;
     border: 1px solid var(--gris);
     background-color: whitesmoke;
@@ -36,23 +42,45 @@
     color: rgb(86, 86, 86);
     transition: transform 0.3s ease-out;
     display: inline-block;
-    margin: 0.5vh 0;
+    margin: 0;
 }
 
 @media (min-width: 768px) {
 
     .eachImg-div {
-        height: 17vw;
+        width: 6rem;
+        height: 9rem;
     }
 
     .cloudinary-images {
-        padding: 0;
+        width: 85vw;
     }
 
     .selectImg-container {
-        width: 90vw;
-        display: flex;
-        justify-content: center;
-        gap: 4.5vw;
+        width: 82vw;  
+    }
+
+    .selectImg-container label{
+        width: 5.6rem;
+    } 
+}
+
+@media (min-width: 992px) {
+
+    .eachImg-div {
+        width: 10rem;
+        height: 13rem;
+    }
+
+    .cloudinary-images {
+        width: 60vw;
+    }
+
+    .selectImg-container {
+        width: 60vw;  
+    }
+
+    .selectImg-container label{
+        width: 6.5rem;
     }
 }
