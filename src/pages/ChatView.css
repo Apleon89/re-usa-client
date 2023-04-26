@@ -13,7 +13,7 @@
 
 .chat-form {
     position: fixed;
-    bottom: 7vh;
+    bottom: 3.5rem;
     margin: 0 auto;
     padding: 1vh;
     display: flex;
@@ -35,8 +35,10 @@
 }
 
 .viewChat-container {
-    padding-top: 7vh;
-    padding-bottom: 4rem;
+    padding-top: 4rem;
+    padding-bottom: 10rem;
+    width: 95vw;
+    margin: 0 auto;
 }
 
 .userB-chat {
@@ -108,16 +110,12 @@
 
 @media (min-width: 768px) {
 
-    .chat-form  {
-        bottom: 0;
-    }
-
     .chat-form textarea {
         width: 50vw;
     }
 
     .viewChat-container {
-        max-width: 50vw;
+        max-width: 80vw;
         margin: 0 auto;
     }
 
