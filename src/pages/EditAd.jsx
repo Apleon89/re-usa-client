@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import CloudinaryAdsUploader from "../components/CloudinaryAdsUploader";
-import GoBack from "../components/GoBack";
+import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import { adDetailsService, editAdService } from "../services/ad.services";
 import "./EditAd.css";
@@ -76,11 +76,7 @@ function EditAd() {
   return (
     <div className="editAd-body">
       <Navbar />
-      <div className="editAd-title-container">
-        <GoBack />
-        <h3>Editar anuncio</h3>
-        <div className="divStyle"></div>
-      </div>
+      <Header name={'Editar anuncio'} />
       <div className="editAd-container">
         <div>
           {userImages && (

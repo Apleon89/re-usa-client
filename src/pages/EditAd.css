@@ -5,24 +5,8 @@
     padding-bottom: 7vh;
 }
 
-.editAd-title-container{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: var(--amarillo);
-    height: 7vh;
-    position: fixed;
-    top: 0;
-    width: 100%;
-    color: var(--gris-oscuro);
-}
-
 .editAd-container {
-    padding-top: 7vh;
-}
-
-.editAd-title-container h3 {
-    margin: 0;
+    padding-top: 4rem;
 }
 
 .editAd-form {
@@ -46,21 +30,29 @@
     width: 98%;
     border-radius: 5px;
     border: 1px solid var(--gris);
-    height: 4vh;
+    height: 2rem;
     background-color: whitesmoke;
 }
 
+.editAd-div select {
+    width: 98.5%;
+}
+
 .editAd-div textarea {
-    height: 15vh;
+    height: 8rem;
 }
 
 @media (min-width: 768px) {
-    .editAd-title-container {
-        margin-top: 7vh;
-    }
+    
+    
+
+
+}
+
+@media (min-width: 992px) {
     
     .editAd-container {
-        padding-top: 14vh;
+        padding-top: 8rem;
     }
 
 
