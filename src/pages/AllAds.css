@@ -15,9 +15,6 @@
 }
 
 @media (min-width: 992px) {
-    .allAds-body {
-        padding-top: 3.5rem;
-    }
 
     .allAds-container {
         display: flex;
