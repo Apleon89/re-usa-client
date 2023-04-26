@@ -17,7 +17,6 @@ function AdDetails() {
   const { idProducto } = params;
 
   const { loggedUser } = useContext(authContext);
-  console.log(loggedUser);
 
   const [ad, setAd] = useState(null);
   const [userFavs, setUserFavs] = useState(null);
