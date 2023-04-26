@@ -1,8 +1,7 @@
 .editAd-body {
-    min-height: 100vh;
     background-color: var(--amarillo-claro);
     color: var(--gris-oscuro);
-    padding-bottom: 7vh;
+    padding-bottom: 3.5rem;
 }
 
 .editAd-container {
@@ -10,7 +9,7 @@
 }
 
 .editAd-form {
-    width: 80vw;
+    width: 90vw;
     padding: 2vh;
     margin: 0 auto;
 }
@@ -35,7 +34,7 @@
 }
 
 .editAd-div select {
-    width: 98.5%;
+    width: 99%;
 }
 
 .editAd-div textarea {
@@ -44,16 +43,18 @@
 
 @media (min-width: 768px) {
     
-    
-
-
+    .editAd-form {
+        width: 80vw;
+    }  
 }
 
 @media (min-width: 992px) {
+
+    .editAd-form {
+        width: 60vw;
+    } 
     
     .editAd-container {
         padding-top: 8rem;
     }
-
-
 }
