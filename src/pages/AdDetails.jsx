@@ -17,6 +17,7 @@ function AdDetails() {
   const { idProducto } = params;
 
   const { loggedUser } = useContext(authContext);
+  console.log(loggedUser);
 
   const [ad, setAd] = useState(null);
   const [userFavs, setUserFavs] = useState(null);
@@ -41,7 +42,7 @@ function AdDetails() {
   const deleteAd = async () => {
     try {
       await deleteAdService(idProducto);
-      navigate(-1);
+      navigate(`/perfil/${loggedUser._id}/misAnuncios`);
     } catch (error) {
       navigate("/error");
     }
