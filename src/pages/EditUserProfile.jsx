@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import GoBack from "../components/GoBack";
+import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import {
   getProfileService,
@@ -76,11 +76,7 @@ function EditUserProfile() {
   return (
     <div className="editProfile-body">
       <Navbar />
-      <div className="editProfile-title-container">
-        <GoBack />
-        <h3>Editar Perfil</h3>
-        <div className="divStyle"></div>
-      </div>
+      <Header name={'Editar perfil'} />
       <div className="editProfile-container">
         {imageUrl && (
           <div className="editProfile-imgContainer">

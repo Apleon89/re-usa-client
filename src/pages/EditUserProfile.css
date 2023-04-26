@@ -4,23 +4,8 @@
     color: var(--gris-oscuro);
 }
 
-.editProfile-title-container{
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: var(--amarillo);
-    height: 7vh;
-    position: fixed;
-    width: 100%;
-    color: var(--gris-oscuro);
-}
-
-.divStyle {
-    width: 10vw;
-}
-
 .editProfile-container {
-    padding-top: 10vh;
+    padding-top: 4rem;
 }
 
 .editProfile-imgContainer {
@@ -98,12 +83,17 @@
 }
 
 @media (min-width: 768px) {
-    .editProfile-title-container {
-        margin-top: 7vh;
+
+    .editProfile-form {
+        width: 50vw;
     }
 
+}
+
+@media (min-width: 992px) {
+
     .editProfile-container {
-        padding-top: 14vh;
+        padding-top: 8rem;
     }
 
     .editProfile-form {
