@@ -7,17 +7,6 @@
     margin: 0;
 }
 
-.viewChat-title-container {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background-color: var(--amarillo);
-    height: 7vh;
-    position: fixed;
-    width: 100vw;
-    top: 0;
-}
-
 .chat-form-div {
     width: 100vw;
 }
@@ -47,7 +36,7 @@
 
 .viewChat-container {
     padding-top: 7vh;
-    padding-bottom: 20vh;
+    padding-bottom: 4rem;
 }
 
 .userB-chat {
@@ -118,13 +107,6 @@
 }
 
 @media (min-width: 768px) {
-    .viewChat-title-container {
-        margin-top: 7vh;
-    }
-
-    .viewchat-body {
-        padding-top: 7vh;
-    }
 
     .chat-form  {
         bottom: 0;
@@ -137,6 +119,25 @@
     .viewChat-container {
         max-width: 50vw;
         margin: 0 auto;
+    }
+
+    
+}
+
+@media (min-width: 992px) {
+
+    .chat-form  {
+        bottom: 0;
+    }
+
+    .chat-form textarea {
+        width: 50vw;
+    }
+
+    .viewChat-container {
+        max-width: 50vw;
+        margin: 0 auto;
+        padding: 8rem 0;
     }
 
     

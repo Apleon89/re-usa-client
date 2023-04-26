@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
-import GoBack from "../components/GoBack";
+import Header from "../components/Header";
 import Navbar from "../components/Navbar";
 import {
   getChatService,
@@ -56,17 +56,14 @@ function ChatView() {
   return (
     <div className="viewchat-body">
       <Navbar />
-      <div className="viewChat-title-container">
-        <GoBack />
-        {!userB ? (
-          <h2>...Buscando</h2>
+      <Header name={!userB ? (
+          '...Buscando'
         ) : userB.username.slice(0, 17) === "Usuario Eliminado" ? (
-          <h2>Usuario Eliminado</h2>
+          'Usuario Eliminado'
         ) : (
-          <h2>{userB.username}</h2>
-        )}
-        <div className="divStyle"></div>
-      </div>
+          `${userB.username}`
+        )} />
+      
       <div className="viewChat-container">
         {!chat ? (
           <div className="loopSearch">
