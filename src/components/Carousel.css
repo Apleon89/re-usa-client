@@ -11,6 +11,17 @@
     border-radius: 10px;
 }
 
+.carousel-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.carousel-btn p {
+    margin: 0 0 0.8rem 0;
+}
+
 .carousel-btn button {
     margin-bottom: 4vh;
     padding: 1vh 4vw;
