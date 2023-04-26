@@ -15,18 +15,22 @@
 
 .home-icon {
     width: 2.5rem;
+    opacity: 0.80;
 }
 
 .fav-icon {
     width: 2rem;
+    opacity: 0.80;
 }
 
 .add-icon {
     width: 2rem;
+    opacity: 0.80;
 }
 
 .mssg-icon {
     width: 2.5rem;
+    opacity: 0.80;
 }
 
 .profile-icon {
@@ -35,6 +39,7 @@
     border-radius: 20px;
     object-fit: cover;
     border: 1px solid var(--gris);
+    opacity: 0.85;
 }
 
 .web-navBar,
