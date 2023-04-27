@@ -13,7 +13,7 @@
 }
 
 .divStyle {
-    max-width: 3.5rem;
+    width: 3.5rem;
 }
 
 @media (min-width: 768px) {
