@@ -26,10 +26,11 @@
 
 .text-container h3 {
     color: var(--gris-oscuro);
+    margin: 0;
 }
 
 .text-container p {
-    color: var(--gris)
+    color: var(--gris);
 }
 
 @media (min-width: 768px) {
