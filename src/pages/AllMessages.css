@@ -17,8 +17,7 @@
     padding-bottom: 3.5rem;
 }
 
-.edit-btn,
-.deleteChat-btn {
+.edit-btn {
     padding: 0.3rem 0.5rem;
     border-radius: 10px;
     border: 1px solid var(--gris);
@@ -29,13 +28,36 @@
     transition: transform 0.3s ease-out;
 }
 
+.deleteChat-btn-div {
+    background-color: rgb(229, 111, 111);
+    border: 0.5px solid var(--gris);
+    height: 20vw;
+    width: 20vw;
+    padding: 1vh;
+    display: flex;
+    justify-content: center;
+}
+
 .deleteChat-btn {
-    margin: 0.5vh 0 2vh 0;
+    border: none;
+    background-color: rgb(229, 111, 111);
+    color: whitesmoke;
+    font-size: 1rem;
 }
 
 .edit-btn:hover,
 .deleteChat-btn:hover {
     transform: translateY(-2px) translateZ(0) scale(1.05);
+}
+
+.one-chat-link {
+    width: 100vw;
+}
+
+.contact-link-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 
 @media (min-width: 768px) {
@@ -47,6 +69,28 @@
         flex-wrap: wrap;
         gap: 5vw;
         padding-bottom: 5rem;
+    }
+
+    .one-chat-link {
+        width: auto;
+    }
+
+    .contact-link-container {
+        display: block;
+    }
+
+    .deleteChat-btn-div {
+        height: 2rem;
+        width: 15rem;
+        border-radius: 10px;
+        margin-top: 0.5rem;
+    }
+    
+    .deleteChat-btn {
+        border: none;
+        background-color: rgb(229, 111, 111);
+        color: whitesmoke;
+        font-size: 1rem;
     }
 
 }

@@ -53,38 +53,51 @@ function AllMessages() {
       <div className="allmsgs-title-container">
         <GoBack />
         <h3>Mensajes</h3>
-        <button className="edit-btn" onClick={showDeleteButton}>Editar</button>
+        <button className="edit-btn" onClick={showDeleteButton}>
+          Editar
+        </button>
       </div>
       <div className="allmsgs-container">
-      {!allChats ? (
-        <div className="loopSearch">
-          <h3>Buscando</h3>
-          <PropagateLoader />
-        </div>
-      ) : allChats.length === 0 ? (
-        <h2>No hay chats</h2>
-      ) : (
-        allChats.map((each) => (
-          <div key={each.id}>
-            <Link to={`/mensajes/${each.id}`}>
-              {each.username.slice(0, 17) === "Usuario Eliminado" ? (
-                <OneElement
-                  img={each.img}
-                  title={"Usuario Eliminado"}
-                  id={each.id}
-                />
-              ) : (
-                <OneElement img={each.img} title={each.username} id={each.id} />
-              )}
-            </Link>
-            {deleteButton && (
-              <button className="deleteChat-btn" onClick={() => deleteAllMsgsOneUser(each.id)}>
-                Borrar
-              </button>
-            )}
+        {!allChats ? (
+          <div className="loopSearch">
+            <h3>Buscando</h3>
+            <PropagateLoader />
           </div>
-        ))
-      )}
+        ) : allChats.length === 0 ? (
+          <h2>No hay chats</h2>
+        ) : (
+          allChats.map((each) => (
+            <div key={each.id} className="contact-link-container">
+              <div className="one-chat-link">
+                <Link to={`/mensajes/${each.id}`}>
+                  {each.username.slice(0, 17) === "Usuario Eliminado" ? (
+                    <OneElement
+                      img={each.img}
+                      title={"Usuario Eliminado"}
+                      id={each.id}
+                    />
+                  ) : (
+                    <OneElement
+                      img={each.img}
+                      title={each.username}
+                      id={each.id}
+                    />
+                  )}
+                </Link>
+              </div>
+              {deleteButton && (
+                <div className="deleteChat-btn-div">
+                  <button
+                    className="deleteChat-btn"
+                    onClick={() => deleteAllMsgsOneUser(each.id)}
+                  >
+                    Borrar
+                  </button>
+                </div>
+              )}
+            </div>
+          ))
+        )}
       </div>
     </div>
   );
