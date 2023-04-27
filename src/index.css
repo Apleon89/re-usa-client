@@ -26,10 +26,10 @@ p {
 .loopSearch {
   display: flex;
   flex-direction: column;
-  padding-top: 20vh;
+  justify-content: center;
   align-items: center;
   gap: 2vh;
-  height: 100vh;
+  height: 60vh;
   color: var(--gris-oscuro);
 }
 
