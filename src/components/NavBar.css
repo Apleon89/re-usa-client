@@ -96,8 +96,9 @@
     }
 
     .web-navBar a:hover,
-    .web-navBar a:active {
+    .web-navBar a.active {
         color: var(--gris-oscuro);
+        font-weight: 500;
     }
 
 }

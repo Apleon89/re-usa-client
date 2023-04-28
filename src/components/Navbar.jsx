@@ -37,12 +37,12 @@ function Navbar() {
         </div>
         <div className="">
           <div className="logo-container">
-            <NavLink to={"/anuncios"}>
+            <NavLink to={"/todos-anuncios"}>
               <img className="logo" src={logo} alt="logo Re-Usa" />
             </NavLink>
           </div>
           <div className="web-navBar">
-            <NavLink to="/anuncios">Anuncios</NavLink>
+            <NavLink exact to="/todos-anuncios">Anuncios</NavLink>
             <NavLink to="/anuncios/favoritos">Favoritos</NavLink>
             <NavLink to="/anuncios/anadir">Añadir Anuncio</NavLink>
             <NavLink to="/mensajes">Mensajes</NavLink>

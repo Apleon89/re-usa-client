@@ -25,7 +25,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/registro" element={<Signup />} />
         <Route path="/acceso" element={<Login />} />
-        <Route path="/anuncios" element={<AllAds />} />
+        <Route path="/todos-anuncios" element={<AllAds />} />
         <Route
           path="/anuncios/:idProducto"
           element={
