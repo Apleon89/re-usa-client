@@ -15,7 +15,7 @@ function Navbar() {
     return (
       <div className="navBar">
         <div className="mobile-navBar">
-          <NavLink to="/anuncios">
+          <NavLink to="/todos-anuncios">
             <img className="home-icon" src={homeIcon} alt="home icon" />
           </NavLink>
           <NavLink to="/anuncios/favoritos">
