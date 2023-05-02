@@ -11,7 +11,7 @@ function NotFound() {
       <Navbar />
       <img className="notFoundImgMobile" src={errorImg} alt="404" />
       <h3>Error 404. Pagina no encontrada :(</h3>
-      <Link className="go-back-404Btn" to={navigate(-1)}>
+      <Link to={navigate(-1)}>
         <button className="btn go-back-404Btn">Vuelve atrás</button>
       </Link>
     </div>
