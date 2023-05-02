@@ -5,9 +5,27 @@
 
 .error-div h3 {
     margin: 0 5vw;
+    padding-top: 6rem;
 }
 
 .error {
-    padding-top: 10vh;
     color: var(--gris-oscuro);
+}
+
+.error500Img {
+    width: 80vw;
+    max-width: 30rem;
+    padding: 5rem 1rem 2rem 1rem;
+    margin: 0 auto;
+}
+
+.go-back-500Btn {
+    margin-top: 2rem;
+}
+
+@media (min-width: 992px) {
+    .error500Img {
+        
+    padding: 9rem 1rem 2rem 1rem;
+    }
 }
