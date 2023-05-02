@@ -15,7 +15,7 @@ function Login() {
   const [errorMessage, setErrorMessage] = useState("");
 
   useEffect(() => {
-    loggedUser && navigate("/anuncios");
+    loggedUser && navigate("/todos-anuncios");
   }, []);
 
   const handleLogin = async (e) => {
@@ -29,7 +29,7 @@ function Login() {
       const response = await loginService(user);
       localStorage.setItem("authToken", response.data.authToken);
       validateToken();
-      navigate("/anuncios");
+      navigate("/todos-anuncios");
     } catch (error) {
       if (error.response.status === 400) {
         setErrorMessage(error.response.data.errorMessage);
