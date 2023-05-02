@@ -1,0 +1,25 @@
+.nofFound-div {
+    background-color: var(--amarillo-claro);
+    min-height: 100vh;
+}
+
+.nofFound-div h3 {
+    margin: 0 5vw;
+    padding-top: 2rem;
+    color: var(--gris-oscuro);
+}
+
+.notFoundImgMobile {
+    max-width: 30rem;
+    padding: 1rem;
+}
+
+.go-back-404Btn {
+    margin-top: 2rem;
+}
+
+@media (min-width: 992px) {
+    .notFoundImgMobile {
+        padding: 4rem;
+    }
+}
