@@ -10,8 +10,10 @@
 }
 
 .notFoundImgMobile {
+    width: 80vw;
     max-width: 30rem;
     padding: 1rem;
+    margin: 0 auto;
 }
 
 .go-back-404Btn {
