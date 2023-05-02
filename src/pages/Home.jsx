@@ -10,7 +10,7 @@ function Home() {
   const navigate = useNavigate();
 
   useEffect(() => {
-    loggedUser && navigate("/anuncios");
+    loggedUser && navigate("/todos-anuncios");
   }, []);
 
   return (

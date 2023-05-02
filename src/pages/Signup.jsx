@@ -16,7 +16,7 @@ function Signup() {
   const [errorMessage, setErrorMessage] = useState("");
 
   useEffect( () => {
-    loggedUser && navigate('/anuncios')
+    loggedUser && navigate('/todos-anuncios')
   }, [])
 
   const handleSubmit = async (e) => {
