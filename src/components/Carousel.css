@@ -9,6 +9,7 @@
     height: 100%;
     object-fit: cover;
     border-radius: 10px;
+    border: 0.5px solid var(--gris);
 }
 
 .carousel-btn {
@@ -47,5 +48,13 @@
 
     .carousel-btn button {
         margin-top: 2vh;
+    }
+}
+
+@media (min-width: 992px) {
+    .carousel-img-container {
+        width: 80vw;
+        height: 50vh;
+        margin-bottom: 2vh;
     }
 }
