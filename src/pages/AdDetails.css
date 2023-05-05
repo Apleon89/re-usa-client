@@ -22,8 +22,16 @@
 }
 
 .ad-description {
-    max-width: 90vw;
+    max-width: 80vw;
     margin: 0 auto;
+    text-align: start;
+    border: 1px solid var(--gris);
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.ad-description span {
+    font-weight: 600;
 }
 
 .btn-editarAd,
@@ -67,5 +75,9 @@
 
     .ad-description {
         max-width: 75vw;
+    }
+
+    .adDetails-body { 
+        padding-bottom: 2rem;
     }
 }
