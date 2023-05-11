@@ -26,7 +26,7 @@ function Home() {
         </p>
         <div>
           <p className="frase-anuncios">Echa un vistazo a los anuncios:</p>
-          <Link to="/anuncios">
+          <Link to="/todos-anuncios">
             <button className="btn btn-anuncios">Ver anuncios</button>
           </Link>
         </div>
